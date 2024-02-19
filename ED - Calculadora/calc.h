@@ -6,7 +6,14 @@
 
 typedef struct calc Calc;
 
-
+Calc* criaCalc();
+void zeraCalc(Calc *c);
+void destroiCalc(Calc *c);
+void exibeResultado(Calc *c);
+Calc* divCalc(Calc *c, float n);
+Calc* multCalc(Calc *c, float n);
+Calc* subtCalc(Calc *c, float n);
+Calc* somaCalc(Calc *c, float n);
 
 #endif  //finalização do IF para definição única do cabeçalho
 

@@ -28,16 +28,22 @@ Calc* divCalc(Calc *c, float n)
 
 void exibeResultado(Calc *c)
 {
+    if(!c)
+        return printf("Calculadora não existe!\n");
     printf("Resultado: %.2f\n", c->ans);
 }
 
 void destroiCalc(Calc *c)
 {
+    if(!c)
+        return printf("Calculadora não existe!\n");
     free(c);
 }
 
 void zeraCalc(Calc *c)
 {
+    if(!c)
+        return printf("Calculadora não existe!\n");
     c->ans = 0;
 }
 
