@@ -1,6 +1,5 @@
-
 #ifndef PONTO_H
-#define PONTO_H 1
+#define PONTO_H
 
 typedef struct ponto Ponto;
 
