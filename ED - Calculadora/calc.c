@@ -1,4 +1,5 @@
 #include <stdio.h> // incluído para possibilitar o printf da função exibeResultado
+#include <stdlib.h> // para possibilitar o uso da função free e malloc
 #include "calc.h"
 
 struct calc
@@ -29,27 +30,30 @@ Calc* divCalc(Calc *c, float n)
 void exibeResultado(Calc *c)
 {
     if(!c)
-        return printf("Calculadora não existe!\n");
+        printf("Calculadora não existe!\n");
     printf("Resultado: %.2f\n", c->ans);
 }
 
 void destroiCalc(Calc *c)
 {
     if(!c)
-        return printf("Calculadora não existe!\n");
+        printf("Calculadora não existe!\n");
     free(c);
+    printf("A Calculadora foi destruída!\n");
 }
 
 void zeraCalc(Calc *c)
 {
     if(!c)
-        return printf("Calculadora não existe!\n");
+        printf("Calculadora não existe!\n");
     c->ans = 0;
+    printf("A Calculadora foi zerada!\n");
 }
 
 Calc* criaCalc()
 {
     Calc *c = malloc(sizeof(Calc));
     c->ans = 0;
+    printf("A Calculadora foi criada!\n");
     return c;
 }
