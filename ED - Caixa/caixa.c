@@ -15,7 +15,7 @@ struct caixa
 
 Caixa *criar_caixa(float comp, float largura, float altura)
 {
-    Caixa *c1 = malloc(sizeof(Caixa));
+    Caixa *c1 = (Caixa*) malloc(sizeof(Caixa));  //Por que fazer esse casting?
     c1->altura = altura;
     c1->comprimento = comp;
     c1->largura = largura;
@@ -25,7 +25,7 @@ Caixa *criar_caixa(float comp, float largura, float altura)
 
 void liberar_caixa(Caixa *c)
 {
-    if(!c) // tratamento de exceção, para caso se queira liberar uma caixa que não existe.
+    if(c == NULL) // tratamento de exceção, para caso se queira liberar uma caixa que não existe.
         printf("A caixa indicada para liberação não existe!\n");
     free(c);
     printf("A caixa foi liberada da memória");
@@ -43,7 +43,7 @@ float area_caixa(Caixa *c)
     if(!c) // tratamento de exceção, para caso se queira calcular a área de uma caixa que não existe.
         printf("A caixa indicada para cálculo de área não existe!\n");
     float area = (c->comprimento) * (c->altura) * 2 + (c->comprimento) * (c->largura) * 2 + (c->altura) * (c->largura) * 2;
-    return printf("A área total da caixa é: %.2f m²\n", area);
+    return printf("A área total da caixa é: %.2f m2\n", area);
 }
 
 float volume_caixa(Caixa *c)
@@ -51,5 +51,5 @@ float volume_caixa(Caixa *c)
     if(!c) // tratamento de exceção, para caso se queira calcular o volume de uma caixa que não existe.
         printf("A caixa indicada para cálculo de volume não existe!\n");
     float volume = (c->comprimento) * (c->altura) * (c->largura);
-    return printf("O volume da caixa é: %.2f m³\n", volume);
+    return printf("O volume da caixa é: %.2f m3\n", volume);
 }
