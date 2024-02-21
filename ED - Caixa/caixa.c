@@ -43,7 +43,7 @@ float area_caixa(Caixa *c)
     if(!c) // tratamento de exceção, para caso se queira calcular a área de uma caixa que não existe.
         printf("A caixa indicada para cálculo de área não existe!\n");
     float area = (c->comprimento) * (c->altura) * 2 + (c->comprimento) * (c->largura) * 2 + (c->altura) * (c->largura) * 2;
-    return printf("A área total da caixa é: %.2f\n", area);
+    return printf("A área total da caixa é: %.2f m²\n", area);
 }
 
 float volume_caixa(Caixa *c)
@@ -51,5 +51,5 @@ float volume_caixa(Caixa *c)
     if(!c) // tratamento de exceção, para caso se queira calcular o volume de uma caixa que não existe.
         printf("A caixa indicada para cálculo de volume não existe!\n");
     float volume = (c->comprimento) * (c->altura) * (c->largura);
-    return printf("O volume da caixa é: %.2f\n", volume);
+    return printf("O volume da caixa é: %.2f m³\n", volume);
 }
