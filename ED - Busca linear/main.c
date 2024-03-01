@@ -8,7 +8,7 @@ int main()
     Vetor *v = cria_vetor(tamanho);
     int pos = busca_linear(tamanho, v, valor);
     if (pos == -1)
-        printf("O valor não foi encontrado no vetor!\n");
+        printf("O valor nao foi encontrado no vetor!\n");
     else
-        printf("O valor procurado está na posição %d do vator!\n", pos);
+        printf("O valor procurado esta na posicao %d do vetor!\n", pos);
 }

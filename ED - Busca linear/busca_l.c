@@ -21,11 +21,12 @@ Vetor* cria_vetor(int qtd_elementos)
 }
 
 
-int busca_linear(int tamanho, int vetor[], int valor)
+int busca_linear(int tamanho, Vetor *vetor, int valor)
 {
+    int *p = vetor->vetor;
     for (int i = 0; i < tamanho; i++)
     {
-        if (vetor[i] == valor)
+        if ((vetor->vetor[i]) == valor)
             return i;   
     }
     return -1;
