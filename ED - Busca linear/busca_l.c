@@ -31,3 +31,9 @@ int busca_linear(int tamanho, Vetor *vetor, int valor)
     }
     return -1;
 }
+
+int num_ocorrencias(int tamanho, Vetor *vetor, int valor)
+
+int ult_ocorrencia(int tamanho, Vetor *vetor, int valor)
+
+int maior_menor(Vetor *vetor)
