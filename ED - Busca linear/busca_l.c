@@ -20,4 +20,12 @@ void cria_vetor(int qtd_elementos)
 }
 
 
-int busca_linear(int tamanho, int vetor[], int valor);
+int busca_linear(int tamanho, int vetor[], int valor)
+{
+    for (int i = 0; i < tamanho; i++)
+    {
+        if (vetor[i] == valor)
+            return i;   
+    }
+    return -1;
+}
