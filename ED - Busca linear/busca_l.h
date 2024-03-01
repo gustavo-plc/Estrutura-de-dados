@@ -3,7 +3,7 @@
 
 typedef struct vetor Vetor;
 
-void cria_vetor(int qtd_elementos);
+Vetor *cria_vetor(int qtd_elementos);
 int busca_linear(int tamanho, int vetor[], int valor);
 
 

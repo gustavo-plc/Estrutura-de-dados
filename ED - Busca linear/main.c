@@ -6,7 +6,7 @@ int main()
     int tamanho = 6;
     int valor = 8;
     cria_vetor(tamanho);
-    int pos = busca_linear(tamanho, v1[], valor);
+    int pos = busca_linear(tamanho, v1, valor);
     if (pos == -1)
         printf("O valor não foi encontrado no vetor!\n");
     else
