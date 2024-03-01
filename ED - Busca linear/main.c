@@ -4,7 +4,7 @@
 int main()
 {
     int tamanho = 6;
-    int valor = 8;
+    int valor = 9;
     Vetor *v = cria_vetor(tamanho);
     int pos = busca_linear(tamanho, v, valor);
     if (pos == -1)
