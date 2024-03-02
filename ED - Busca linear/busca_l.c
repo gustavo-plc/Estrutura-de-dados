@@ -15,7 +15,7 @@ Vetor* cria_vetor(int qtd_elementos)
     for (int i = 0; i < v1->quantidade; i++)
     {
         v1->vetor[i] = i + 3;
-        printf("O valor da posição %d do vetor é: %d\n", i, v1->vetor[i]);
+        printf("O valor da posicao %d do vetor eh: %d\n", i, v1->vetor[i]);
     }
     return v1;
 }
@@ -73,7 +73,7 @@ int maior_menor(Vetor *vetor)
         if ((vetor->vetor[i]) <= (menor))
             menor = vetor->vetor[i];
     }
-    printf("O maior valor do array é: %d\n", maior);
-    printf("O menor valor do array é: %d\n", menor);
+    printf("O maior valor do array eh: %d\n", maior);
+    printf("O menor valor do array eh: %d\n", menor);
     return -1;
 }

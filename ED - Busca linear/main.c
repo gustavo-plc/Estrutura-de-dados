@@ -13,10 +13,10 @@ int main()
         printf("O valor procurado esta na posicao %d do vetor!\n", pos);
 
     int numero_ocorrencias = num_ocorrencias(tamanho, v, valor);
-    printf("O número de ocorrências do valor buscado é de: %d\n", numero_ocorrencias);
+    printf("O numero de ocorrencias do valor buscado eh de: %d\n", numero_ocorrencias);
 
     int ultima_ocorrencia = ult_ocorrencia(tamanho, v, valor);
-    printf("A última ocorrências do valor buscado é na posição %d do array!\n", ultima_ocorrencia);
+    printf("A ultima ocorrencia do valor buscado eh na posicaoo %d do array!\n", ultima_ocorrencia);
 
     maior_menor(v);
 }
