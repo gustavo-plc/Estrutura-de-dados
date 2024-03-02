@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "ponto.h": "c",
-        "calc.h": "c"
+        "calc.h": "c",
+        "limits": "c"
     }
 }

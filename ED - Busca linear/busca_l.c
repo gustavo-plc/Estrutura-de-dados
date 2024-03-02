@@ -23,7 +23,6 @@ Vetor* cria_vetor(int qtd_elementos)
 
 int busca_linear(int tamanho, Vetor *vetor, int valor)
 {
-    int *p = vetor->vetor;
     for (int i = 0; i < tamanho; i++)
     {
         if ((vetor->vetor[i]) == valor)
@@ -33,7 +32,46 @@ int busca_linear(int tamanho, Vetor *vetor, int valor)
 }
 
 int num_ocorrencias(int tamanho, Vetor *vetor, int valor)
+{
+    int cont = 0;
+    for (int i = 0; i < tamanho; i++)
+    {
+        if ((vetor->vetor[i]) == valor)
+        {
+            cont = cont + 1;
+            return cont;
+        }
+    }
+    return -1;
+}
 
 int ult_ocorrencia(int tamanho, Vetor *vetor, int valor)
+{
+    int posicao = 0;
+    for (int i = 0; i < tamanho; i++)
+    {
+        if ((vetor->vetor[i]) == valor)
+        {
+            posicao = i;
+            return posicao;
+        }       
+    }
+    return -1;
+}
+
 
 int maior_menor(Vetor *vetor)
+{
+    float maior,menor;
+    menor = vetor->vetor[0];
+    maior = vetor->vetor[0];
+    
+    for (int i = 0; i < vetor->quantidade; i++)
+    {
+        if ((vetor->vetor[i]) >= (maior))
+            maior = vetor->vetor[i]; 
+        if ((vetor->vetor[i]) <= (menor))
+            menor = vetor->vetor[i];
+    }
+    return -1;
+}
