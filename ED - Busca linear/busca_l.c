@@ -73,5 +73,7 @@ int maior_menor(Vetor *vetor)
         if ((vetor->vetor[i]) <= (menor))
             menor = vetor->vetor[i];
     }
+    printf("O maior valor do array é: %d\n", maior);
+    printf("O menor valor do array é: %d\n", menor);
     return -1;
 }
