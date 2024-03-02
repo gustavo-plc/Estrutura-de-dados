@@ -3,8 +3,8 @@
 
 int main()
 {
-    int tamanho = 6;
-    int valor = 5;
+    int tamanho = 20;
+    int valor = 19;
     Vetor *v = cria_vetor(tamanho);
     int pos = busca_linear(tamanho, v, valor);
     if (pos == -1)
@@ -13,10 +13,16 @@ int main()
         printf("O valor procurado esta na posicao %d do vetor!\n", pos);
 
     int numero_ocorrencias = num_ocorrencias(tamanho, v, valor);
-    printf("O numero de ocorrencias do valor buscado eh de: %d\n", numero_ocorrencias);
+    if numero_ocorrencias == -1
+        printf("Não foram observadas ocorrências do valor dentro do vetor!\n");
+    else    
+        printf("O numero de ocorrencias do valor buscado eh de: %d\n", numero_ocorrencias);
 
     int ultima_ocorrencia = ult_ocorrencia(tamanho, v, valor);
-    printf("A ultima ocorrencia do valor buscado eh na posicaoo %d do array!\n", ultima_ocorrencia);
+    if ultima_ocorrencia == -1
+        printf("Não foram observadas ocorrências do valor dentro do vetor!\n");
+    else
+        printf("A ultima ocorrencia do valor buscado eh na posicaoo %d do array!\n", ultima_ocorrencia);
 
     maior_menor(v);
 }
