@@ -18,5 +18,5 @@ int main()
     int ultima_ocorrencia = ult_ocorrencia(tamanho, v, valor);
     printf("A última ocorrências do valor buscado é na posição %d do array!\n", ultima_ocorrencia);
 
-    int maior_menor(v);
+    maior_menor(v);
 }
