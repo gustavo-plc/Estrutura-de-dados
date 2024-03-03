@@ -8,6 +8,6 @@ int busca_linear(int tamanho, Vetor *vetor, int valor);
 int num_ocorrencias(int tamanho, Vetor *vetor, int valor);
 int ult_ocorrencia(int tamanho, Vetor *vetor, int valor);
 void maior_menor(Vetor *vetor);
-void atualiza(Vetor *vetor, int tamanho, int valor_busca, int novo_valor);
+void atualiza(Vetor *vetor, int tamanho, int valor, int novo_valor);
 
 #endif

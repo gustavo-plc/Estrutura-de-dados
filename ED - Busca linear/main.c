@@ -3,7 +3,7 @@
 
 int main()
 {
-    int tamanho = 4;
+    int tamanho = 30;
     int valor = 7;
     Vetor *v = cria_vetor(tamanho);
     int pos = busca_linear(tamanho, v, valor);
@@ -26,7 +26,6 @@ int main()
 
     maior_menor(v);
 
-    int valor_busca = 4;
     int novo_valor = 400;
-    atualiza(v, tamanho, valor_busca, novo_valor);
+    atualiza(v, tamanho, valor, novo_valor);
 }
