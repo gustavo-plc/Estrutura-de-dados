@@ -3,8 +3,8 @@
 
 int main()
 {
-    int tamanho = 20;
-    int valor = 300;
+    int tamanho = 4;
+    int valor = 7;
     Vetor *v = cria_vetor(tamanho);
     int pos = busca_linear(tamanho, v, valor);
     if (pos == -1)
