@@ -89,3 +89,23 @@ void atualiza(Vetor *vetor, int tamanho, int valor, int novo_valor)
             printf("Valor nao encontrado no array. Substituicao nao realizada!\n");
     }
 }
+
+int buscaBinaria(Vetor *vetor, int tamanho, int valor)
+{
+    int inicio = 0, fim = tamanho - 1, meio;
+    while (inicio <= fim)
+    {
+        meio = (inicio + fim) / 2;
+        if (vetor->vetor[meio] == valor)
+        {
+            return meio;
+        } else if (vetor->vetor[meio] < valor)
+        {
+            inicio = meio + 1;
+        } else 
+        {
+            fim = meio - 1;
+        }
+    }
+    return -1; //elemento não encontrado.
+}
