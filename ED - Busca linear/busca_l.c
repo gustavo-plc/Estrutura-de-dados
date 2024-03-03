@@ -60,7 +60,7 @@ int ult_ocorrencia(int tamanho, Vetor *vetor, int valor)
 }
 
 
-int maior_menor(Vetor *vetor)
+void maior_menor(Vetor *vetor)
 {
     float maior,menor;
     menor = vetor->vetor[0];
@@ -75,5 +75,4 @@ int maior_menor(Vetor *vetor)
     }
     printf("O maior valor do array eh: %d\n", maior);
     printf("O menor valor do array eh: %d\n", menor);
-    return -1;
 }
