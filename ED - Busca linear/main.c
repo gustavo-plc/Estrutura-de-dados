@@ -42,4 +42,10 @@ int main()
         printf("Valor nao encontrado no array!\n");
     else
         printf("Valor encontrado na posicao %d do array!\n", busca_linear_v2);
+
+    int valor_usuario;
+    printf("Insira um valor: \n");
+    scanf("%d", &valor_usuario);
+    int resultado = buscaProxima(v, tamanho, valor_usuario);
+    printf("O valor do array mais próximo do valor fornecido pelo usuário é o %d\n", resultado);
 }

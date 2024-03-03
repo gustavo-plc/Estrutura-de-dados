@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 #include "busca_l.h"
 
 
@@ -121,19 +122,20 @@ int busca_linearv2(int tamanho, Vetor *vetor, int valor)
 int buscaProxima(Vetor * vetor, int tamanho, int valor_usuario)
 {
     int inicio = 0, fim = tamanho - 1, meio;
-    while (inicio <= fim)
+    while (fabs(valor_usuario-vetor->vetor[meio])>1)
     {
         meio = (inicio + fim) / 2;
         if (vetor->vetor[meio] == valor_usuario)
         {
-            return meio;
+            return vetor->vetor[meio];
         } else if (vetor->vetor[meio] < valor_usuario)
         {
-            inicio = meio + 1; //busca na metade de cima
+            inicio = meio + 1; //busca na metade de cima, parte superior
+
         } else 
         {
-            fim = meio - 1; //busca na metade de baixo
+            fim = meio - 1; //busca na metade de baixo, parte inferior
         }
     }
-    return -1; //elemento não encontrado.
+    return vetor->vetor[meio]; //elemento mais próximo.
 }
