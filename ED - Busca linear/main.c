@@ -3,7 +3,7 @@
 
 int main()
 {
-    int tamanho = 30;
+    int tamanho = 10;
     int valor = 7;
     Vetor *v = cria_vetor(tamanho);
     int pos = busca_linear(tamanho, v, valor);
