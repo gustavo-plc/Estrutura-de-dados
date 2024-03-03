@@ -15,5 +15,6 @@ int ult_ocorrencia(int tamanho, Vetor *vetor, int valor);
 void maior_menor(Vetor *vetor, int tamanho);
 void atualiza(Vetor *vetor, int tamanho, int valor, int novo_valor);
 int buscaBinaria(Vetor * vetor, int tamanho, int valor);
+int busca_linearv2(int tamanho, Vetor *vetor, int valor);
 
 #endif

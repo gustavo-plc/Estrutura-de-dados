@@ -2,11 +2,6 @@
 #include <stdio.h>
 #include "busca_l.h"
 
-struct vetor 
-{
-    int quantidade;
-    int vetor[];
-};
 
 Vetor* cria_vetor(int qtd_elementos)
 {
@@ -100,13 +95,18 @@ int buscaBinaria(Vetor *vetor, int tamanho, int valor)
             return cont;
         } else if (vetor->vetor[meio] < valor)
         {
-            inicio = meio + 1;
+            inicio = meio + 1; //busca na metade de cima
             cont++;
         } else 
         {
-            fim = meio - 1;
+            fim = meio - 1; //busca na metade de baixo
             cont++;
         }
     }
     return -1; //elemento não encontrado.
+}
+
+int busca_linearv2(int tamanho, Vetor *vetor, int valor)
+{
+    
 }
