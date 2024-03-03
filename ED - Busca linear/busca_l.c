@@ -76,3 +76,16 @@ void maior_menor(Vetor *vetor)
     printf("O maior valor do array eh: %d\n", maior);
     printf("O menor valor do array eh: %d\n", menor);
 }
+
+void atualiza(Vetor *vetor, int tamanho, int valor_busca, int novo_valor)
+{
+    for (int i = tamanho - 1; i = 0; i--)
+    {
+        if ((vetor->vetor[i]) == valor_busca)
+        {
+            vetor->vetor[i] = novo_valor;
+            printf("Valor constante no índice %d atualizado para %d!\n", i, novo_valor);
+            i = 0;
+        }   
+    }
+}

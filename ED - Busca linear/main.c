@@ -25,4 +25,8 @@ int main()
         printf("A ultima ocorrencia do valor buscado eh na posicao %d do array!\n", ultima_ocorrencia);
 
     maior_menor(v);
+
+    int valor_busca = 4;
+    int novo_valor = 400;
+    atualiza(v, tamanho, valor_busca, novo_valor);
 }
