@@ -1,6 +1,11 @@
 #ifndef BUSCA_L
 #define BUSCA_L
 
+struct vetor 
+{
+    int quantidade;
+    int vetor[];
+};
 typedef struct vetor Vetor;
 
 Vetor *cria_vetor(int qtd_elementos);

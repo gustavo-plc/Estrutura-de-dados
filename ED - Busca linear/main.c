@@ -4,7 +4,7 @@
 int main()
 {
     int tamanho = 5;
-    int valor = 4;
+    int valor = 5;
     Vetor *v = cria_vetor(tamanho);
     int pos = busca_linear(tamanho, v, valor);
     if (pos == -1)
@@ -28,6 +28,8 @@ int main()
 
     int novo_valor = 400;
     atualiza(v, tamanho, valor, novo_valor);
+    for (int i = 0; i < tamanho; i++)
+        printf("O valor do indice %d do vetor eh %d\n", i, v->vetor[i]);
 
     int busca = buscaBinaria(v, tamanho, valor);
     if (busca == -1)
