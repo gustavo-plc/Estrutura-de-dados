@@ -79,13 +79,15 @@ void maior_menor(Vetor *vetor)
 
 void atualiza(Vetor *vetor, int tamanho, int valor, int novo_valor)
 {
-    for (int i = tamanho - 1; i = 0; i--)
+    for (int i = vetor->vetor[i] - 1; i = 0; i--)
     {
         if ((vetor->vetor[i]) == valor)
         {
             vetor->vetor[i] = novo_valor;
             printf("Valor constante no índice %d atualizado para %d!\n", i, novo_valor);
             i = 0;
-        }   
+        }
+        else
+            printf("Valor nao encontrado no array. Substituicao nao realizada!\n");
     }
 }
