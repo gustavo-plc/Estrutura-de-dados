@@ -2,6 +2,7 @@
     "files.associations": {
         "ponto.h": "c",
         "calc.h": "c",
-        "limits": "c"
+        "limits": "c",
+        "stdlib.h": "c"
     }
 }

@@ -14,7 +14,7 @@ Vetor* cria_vetor(int qtd_elementos)
     v1->quantidade = qtd_elementos;
     for (int i = 0; i < v1->quantidade; i++)
     {
-        v1->vetor[i] = i + 20;
+        v1->vetor[i] = i + 1;
         printf("O valor da posicao %d do vetor eh: %d\n", i, v1->vetor[i]);
     }
     return v1;
