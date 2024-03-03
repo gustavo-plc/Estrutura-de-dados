@@ -77,7 +77,7 @@ void maior_menor(Vetor *vetor, int tamanho)
 
 void atualiza(Vetor *vetor, int tamanho, int valor, int novo_valor)
 {
-    for (int i = tamanho - 1; i = 0; i--)
+    for (int i = tamanho - 1; i >= 0; i--)
     {
         if ((vetor->vetor[i]) == valor)
         {
