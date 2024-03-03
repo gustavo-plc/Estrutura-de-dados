@@ -47,5 +47,5 @@ int main()
     printf("Insira um valor: \n");
     scanf("%d", &valor_usuario);
     int resultado = buscaProxima(v, tamanho, valor_usuario);
-    printf("O valor do array mais próximo do valor fornecido pelo usuário é o %d\n", resultado);
+    printf("O valor do array mais proximo do valor fornecido pelo usuario eh o %d\n", resultado);
 }
