@@ -82,11 +82,9 @@ void atualiza(Vetor *vetor, int tamanho, int valor, int novo_valor)
         if ((vetor->vetor[i]) == valor)
         {
             vetor->vetor[i] = novo_valor;
-            printf("Valor constante no índice %d atualizado para %d!\n", i, novo_valor);
+            printf("Valor constante no indice %d atualizado para %d!\n", i, novo_valor);
             i = 0;
         }
-        else
-            printf("Valor nao encontrado no array. Substituicao nao realizada!\n");
     }
 }
 
