@@ -28,4 +28,10 @@ int main()
 
     int novo_valor = 400;
     atualiza(v, tamanho, valor, novo_valor);
+
+    int busca = buscaBinaria(v, tamanho, valor);
+    if (busca == -1)
+        printf("Algoritmo de busca nao realizou divisoes no array!\n");
+    else
+        printf("Algoritmo de busca realizou %d divisoes no array!\n", busca);
 }
