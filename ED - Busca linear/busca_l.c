@@ -14,7 +14,7 @@ Vetor* cria_vetor(int qtd_elementos)
     v1->quantidade = qtd_elementos;
     for (int i = 0; i < v1->quantidade; i++)
     {
-        v1->vetor[i] = i + 1;
+        v1->vetor[i] = i + 20;
         printf("O valor da posicao %d do vetor eh: %d\n", i, v1->vetor[i]);
     }
     return v1;
@@ -60,11 +60,9 @@ int ult_ocorrencia(int tamanho, Vetor *vetor, int valor)
 }
 
 
-void maior_menor(Vetor *vetor)
+void maior_menor(Vetor *vetor, int tamanho)
 {
-    float maior,menor;
-    menor = vetor->vetor[0];
-    maior = vetor->vetor[0];
+    int maior,menor = vetor->vetor[0];
     
     for (int i = 0; i < vetor->quantidade; i++)
     {
