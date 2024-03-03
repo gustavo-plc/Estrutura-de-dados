@@ -108,5 +108,32 @@ int buscaBinaria(Vetor *vetor, int tamanho, int valor)
 
 int busca_linearv2(int tamanho, Vetor *vetor, int valor)
 {
-    
+    for (int i = 0; i < tamanho/2; i++)
+    {
+        if ((vetor->vetor[i]) == valor)
+            return i;  
+        if ((vetor->vetor[tamanho - 1 - i]) == valor)
+            return tamanho - 1 - i;     
+    }
+    return -1;
+}
+
+int buscaProxima(Vetor * vetor, int tamanho, int valor_usuario)
+{
+    int inicio = 0, fim = tamanho - 1, meio;
+    while (inicio <= fim)
+    {
+        meio = (inicio + fim) / 2;
+        if (vetor->vetor[meio] == valor_usuario)
+        {
+            return meio;
+        } else if (vetor->vetor[meio] < valor_usuario)
+        {
+            inicio = meio + 1; //busca na metade de cima
+        } else 
+        {
+            fim = meio - 1; //busca na metade de baixo
+        }
+    }
+    return -1; //elemento não encontrado.
 }

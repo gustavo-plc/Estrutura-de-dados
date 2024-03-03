@@ -36,4 +36,10 @@ int main()
         printf("Algoritmo de busca nao realizou divisoes no array!\n");
     else
         printf("Algoritmo de busca realizou %d divisoes no array!\n", busca);
+
+    int busca_linear_v2 = busca_linearv2(tamanho, v, valor);
+    if (busca_linear_v2 == -1)
+        printf("Valor nao encontrado no array!\n");
+    else
+        printf("Valor encontrado na posicao %d do array!\n", busca_linear_v2);
 }
