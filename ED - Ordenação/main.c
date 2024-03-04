@@ -11,5 +11,5 @@ int main()
     {
         printf("O indice %d do array ordenado eh: %d\n", i, array[i]);
     }
-
+    return 0;
 }
