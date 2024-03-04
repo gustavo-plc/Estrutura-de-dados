@@ -14,12 +14,23 @@ void bubbleSort(int arr[], int n)
                 arr[j + 1] = arr[j];
                 arr[j] = temp;
             }
-            printf("O indice %d do array ordenado eh: %d\n", i, arr[i]);
         }
     }
 }
 
-void bubbleSort_invertido(int arr[], int n)
+void bubbleSort_invertido(int arr[], int n) //função para ordem decrescente
 {
-
+    int i, j, temp;
+    for (int i = 0; i < n - 1; i++) // no invertido, continuo tendo que fazer n-1 iterações
+    {
+        for (int j = n - i - 1; j > 0; j--)
+        {
+            if (arr[j+1]>arr[j])
+            {
+                temp = arr[j + 1];
+                arr[j + 1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
 }
