@@ -15,5 +15,9 @@ int main()
     {
         printf("O indice %d do array ordenado eh: %d\n", i, array[i]);
     }
+    for (int i = 0; i < qtd; i++)
+    {
+        printf("O indice %d do array ordenado eh: %d\n", i, array2[i]);
+    }
     return 0;
 }
