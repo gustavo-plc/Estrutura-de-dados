@@ -3,6 +3,7 @@
         "ponto.h": "c",
         "calc.h": "c",
         "limits": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "ordena.h": "c"
     }
 }
