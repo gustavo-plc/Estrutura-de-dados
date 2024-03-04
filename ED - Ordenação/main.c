@@ -8,8 +8,10 @@ int main()
 
     int array2[] = {15, 13, 17, 11, 12, 14, 19, 18};
 
-    selectionSortV2(array, qtd);
-    bubbleSort_invertido(array2, qtd);
+    //selectionSortV2(array, qtd);
+    //bubbleSort_invertido(array2, qtd);
+
+    bubbleSort_invertido_comCalma(array, qtd);
 
     for (int i = 0; i < qtd; i++)
     {

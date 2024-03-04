@@ -35,6 +35,23 @@ void bubbleSort_invertido(int arr[], int n) //função para ordem decrescente
     }
 }
 
+void bubbleSort_invertido_comCalma(int arr[], int n) //função para ordem decrescente
+{
+    int i, j, aux;
+    for (i = 0; i < n - 1; i++) // no invertido, continuo tendo que fazer n-1 iterações
+    {
+        for (j = n - 1; j > i; j--)
+        {
+            if (arr[j]>arr[j-1])
+            {
+                aux = arr[j];
+	            arr[j] = arr[j-1];
+	            arr[j-1] = aux;
+            }
+        }
+    }
+}
+
 void selectionSort(int arr[], int n)
 {
     int i, j, min, temp;
