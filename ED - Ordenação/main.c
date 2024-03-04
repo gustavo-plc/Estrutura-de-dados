@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "ordena.h"
 
 int main()
 {
