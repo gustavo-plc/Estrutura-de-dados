@@ -11,7 +11,7 @@ int main()
     //selectionSortV2(array, qtd);
     //bubbleSort_invertido(array2, qtd);
 
-    bubbleSort_invertido_comCalma(array, qtd);
+    bubbleSort_invertido(array, qtd);
 
     for (int i = 0; i < qtd; i++)
     {
