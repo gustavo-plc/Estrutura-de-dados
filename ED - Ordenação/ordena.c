@@ -14,6 +14,7 @@ void bubbleSort(int arr[], int n)
                 arr[j + 1] = arr[j];
                 arr[j] = temp;
             }
+            printf("O indice %d do array ordenado eh: %d\n", i, arr[i]);
         }
     }
 }
