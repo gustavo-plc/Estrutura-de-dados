@@ -19,7 +19,7 @@ void bubbleSort(int arr[], int n)
 }
 
 
-void bubbleSort_invertido(int arr[], int n) //função para ordem decrescente
+void bubbleSort_invertido(int arr[], int n) //função para ordem decrescente, percorrendo da direita para a esquerda.
 {
     int i, j, aux;
     for (i = 0; i < n - 1; i++) // no invertido, continuo tendo que fazer n-1 iterações
