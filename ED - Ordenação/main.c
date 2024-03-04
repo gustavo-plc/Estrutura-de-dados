@@ -5,7 +5,11 @@ int main()
 {
     int qtd = 8;
     int array[] = {5, 3, 7, 1, 2, 4, 9, 8};
-    bubbleSort(array, qtd);
+
+    int array2[] = {15, 13, 17, 11, 12, 14, 19, 18};
+
+    selectionSortV2(array, qtd);
+    bubbleSort_invertido(array2, qtd);
 
     for (int i = 0; i < qtd; i++)
     {

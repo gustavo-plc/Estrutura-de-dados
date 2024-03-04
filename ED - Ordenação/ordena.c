@@ -57,5 +57,20 @@ void selectionSort(int arr[], int n)
 
 void selectionSortV2(int arr[], int n)
 {
-    
+    int i, j, maior, temp;
+    for (i = n - 1; i > 0; i--)
+    {
+        maior = i;
+        for (j = 0; j < i ; j++)
+        {
+            if(arr[j] > arr[maior])
+                maior = j;
+        }
+        if (maior != i)  //se foi encontrado elemento maior, aí simi faz a troca.
+        {
+            temp = arr[i];
+            arr[i] = arr[maior];
+            arr[maior] = temp;
+        }
+    }
 }
