@@ -100,3 +100,10 @@ void ajusta_heap (int n, int arr[n], int i)
             break;
     }
 }
+
+void construir_heap(int n, int arr[n]) 
+{
+    for (int i = n/2-1; i >= 0; i--)
+        ajusta_heap (n, arr, i);
+}
+
