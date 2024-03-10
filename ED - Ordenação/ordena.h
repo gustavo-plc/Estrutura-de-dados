@@ -8,6 +8,6 @@ void selectionSortV2(int arr[], int n);
 void heapSort(int n, int arr[n]);
 void construir_heap(int n, int arr[n]);
 void ajusta_heap(int n, int arr[n], int i);
-
+void selectionSortHalf(int arr[], int n);
 
 #endif

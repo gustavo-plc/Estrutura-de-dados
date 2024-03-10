@@ -76,6 +76,27 @@ void selectionSortV2(int arr[], int n)
     }
 }
 
+void selectionSortHalf(int arr[], int n)
+{
+    int i, j, min, max, temp;
+    for (i = 0; i < n - 1; i++)
+    {
+        min = i;
+        max = n - i -1;
+        for (j = n - 1; j > 0 ; j--)
+        {
+            if(arr[j] < arr[min])
+                min = j;
+        }
+        if (min != i)
+        {
+            temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
+        }
+    }
+}
+
 void ajusta_heap (int n, int arr[n], int i) 
 {
     int maior = i;
