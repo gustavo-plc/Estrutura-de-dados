@@ -13,10 +13,17 @@ int main()
 
     bubbleSort_invertido(array, qtd);
 
+    selectionSort(array2, qtd);
+
     for (int i = 0; i < qtd; i++)
     {
         printf("O indice %d do array ordenado eh: %d\n", i, array[i]);
     }
     
+        for (int i = 0; i < qtd; i++)
+    {
+        printf("O indice %d do array ordenado eh: %d\n", i, array2[i]);
+    }
+
     return 0;
 }
