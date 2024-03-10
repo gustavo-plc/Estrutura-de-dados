@@ -15,16 +15,16 @@ int main()
 
     selectionSort(array2, qtd);
 
-    heapSort(qtd, array3)
+    heapSort(qtd, array3);
 
     for (int i = 0; i < qtd; i++)
-        printf("O indice %d do array ordenado eh: %d\n", i, array[i]);
+        printf("O indice %d do array 1 ordenado eh: %d\n", i, array[i]);
     
     for (int i = 0; i < qtd; i++)
-        printf("O indice %d do array ordenado eh: %d\n", i, array2[i]);
+        printf("O indice %d do array 2 ordenado eh: %d\n", i, array2[i]);
 
     for (int i = 0; i < qtd; i++)
-        printf("O indice %d do array ordenado eh: %d\n", i, array3[i]);
+        printf("O indice %d do array 3 ordenado eh: %d\n", i, array3[i]);
 
     return 0;
 }
