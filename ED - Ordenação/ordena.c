@@ -67,11 +67,36 @@ void selectionSortV2(int arr[], int n)
             if(arr[j] > arr[maior])
                 maior = j;
         }
-        if (maior != i)  //se foi encontrado elemento maior, aí simi faz a troca.
+        if (maior != i)  //se foi encontrado elemento maior, aí sim faz a troca.
         {
             temp = arr[i];
             arr[i] = arr[maior];
             arr[maior] = temp;
         }
+    }
+}
+
+void ajusta_heap (int n, int arr[n], int i) 
+{
+    int maior = i;
+    int esq, dir, temp;
+    while (maior < n) 
+    {
+        esq = 2*i + 1;
+        dir = 2*i + 2;
+        if (esq < n && arr[esq] > arr[maior]) 
+            maior = esq;
+        if (dir < n && arr[dir] > arr[maior]) 
+            maior = dir;
+        
+        if (maior != i) 
+        {
+            temp = arr[i];
+            arr[i] = arr[maior];
+            arr[maior] = temp;
+            i = maior;
+        }
+        else
+            break;
     }
 }
