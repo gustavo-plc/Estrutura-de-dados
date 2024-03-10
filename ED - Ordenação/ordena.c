@@ -107,3 +107,16 @@ void construir_heap(int n, int arr[n])
         ajusta_heap (n, arr, i);
 }
 
+void heapSort(int n, int arr[n])
+{
+    int i, temp;
+    construir_heap(n, arr);
+    for (i = n-1; i > 0; i--)
+    { 
+        temp = arr[0];
+        arr[0] = arr[i];
+        arr[i] = temp;
+        ajusta_heap(i, arr, 0);
+    }
+}
+
