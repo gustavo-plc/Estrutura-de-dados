@@ -48,5 +48,12 @@ void inserir(Vetor *v, int dado)
 
 void atualizarUm(Vetor *v, int dadoAntigo, int dadoNovo)
 {
-  
+   for (int i = 0; i < v->length; i++)
+    {
+        if (v->dados[i] == dadoAntigo)
+          v->dados[i] = dadoNovo;
+        else
+          printf("Valor buscado não encontrado.\n");
+    }
 }
+
