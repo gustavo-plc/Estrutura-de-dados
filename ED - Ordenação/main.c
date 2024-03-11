@@ -4,6 +4,7 @@
 int main()
 {
     int qtd = 8;
+    int qtd2 = 10;
     int array[] = {5, 3, 7, 1, 2, 4, 9, 8};
 
     int array2[] = {15, 13, 17, 11, 12, 14, 19, 18};
@@ -22,22 +23,22 @@ int main()
 
     //selectionSortHalf(array4, qtd);
 
-    bubbleSortCompTroca(array, qtd);
+    bubbleSortCompTroca(arrayLista3, qtd2);
 
-    for (int i = 0; i < qtd; i++)
-        printf("O indice %d do array 1 ordenado eh: %d\n", i, array[i]);
+    for (int i = 0; i < qtd2; i++)
+        printf("O indice %d do array 1 ordenado eh: %d\n", i, arrayLista3[i]);
     
     //for (int i = 0; i < qtd; i++)
-        printf("O indice %d do array 2 ordenado eh: %d\n", i, array2[i]);
+        //printf("O indice %d do array 2 ordenado eh: %d\n", i, array2[i]);
 
     //for (int i = 0; i < qtd; i++)
-        printf("O indice %d do array 3 ordenado eh: %d\n", i, array3[i]);
+        //printf("O indice %d do array 3 ordenado eh: %d\n", i, array3[i]);
 
     //for (int i = 0; i < qtd; i++)
-        printf("O indice %d do array 4 ordenado eh: %d\n", i, array4[i]);
+        //printf("O indice %d do array 4 ordenado eh: %d\n", i, array4[i]);
 
     //for (int i = 0; i < 10; i++)
-        printf("O indice %d do array 5 ordenado eh: %d\n", i, arrayLista3[i]);
+        //printf("O indice %d do array 5 ordenado eh: %d\n", i, arrayLista3[i]);
 
     return 0;
 }

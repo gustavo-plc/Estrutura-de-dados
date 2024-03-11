@@ -6,7 +6,7 @@ void bubbleSort(int arr[], int n)
     int i, j;
     for (i = 0; i < n - 1; i++)
     {
-        for (j = 0; j < n - i - 1; j++) ;  //para cada iteração do laço externo, o laço interno percorre o array
+        for (j = 0; j < n - i - 1; j++)  //para cada iteração do laço externo, o laço interno percorre o array
         {
             if (arr[j]>arr[j+1])
             {
@@ -38,13 +38,12 @@ void bubbleSort_invertido(int arr[], int n) //função para ordem decrescente, p
 
 void bubbleSortCompTroca(int arr[], int n)
 {
-    int i, j;
     int troca = 0;
-    for (i = 0; i < n - 1; i++)
+    for (int i = 0; i < n - 1; i++)
     {
-        for (j = 0; j < n - i - 1; j++) ;  //para cada iteração do laço externo, o laço interno percorre o array
+        for (int j = 0; j < n - i - 1; j++)  //para cada iteração do laço externo, o laço interno percorre o array
         {
-            if (arr[j]>arr[j+1])
+            if ((arr[j]) > (arr[j+1]))
             {
                 int temp = arr[j];
                 arr[j] = arr[j+1];
