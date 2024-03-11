@@ -17,19 +17,19 @@ int main()
 
     //bubbleSort_invertido(array, qtd);
 
-    //selectionSort(array2, qtd);
+    selectionSort(array2, qtd);
 
     //heapSort(qtd, array3);
 
     //selectionSortHalf(array4, qtd);
 
-    bubbleSortCompTroca(arrayLista3, qtd2);
+    //bubbleSortCompTroca(arrayLista3, qtd2);
 
-    for (int i = 0; i < qtd2; i++)
-        printf("O indice %d do array 1 ordenado eh: %d\n", i, arrayLista3[i]);
+    //for (int i = 0; i < qtd2; i++)
+        //printf("O indice %d do array 1 ordenado eh: %d\n", i, arrayLista3[i]);
     
-    //for (int i = 0; i < qtd; i++)
-        //printf("O indice %d do array 2 ordenado eh: %d\n", i, array2[i]);
+    for (int i = 0; i < qtd; i++)
+        printf("O indice %d do array 2 ordenado eh: %d\n", i, array2[i]);
 
     //for (int i = 0; i < qtd; i++)
         //printf("O indice %d do array 3 ordenado eh: %d\n", i, array3[i]);
