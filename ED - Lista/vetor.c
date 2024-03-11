@@ -11,11 +11,12 @@ struct vetor {
 
 Vetor *criarVetor(int limit) {
   Vetor *v = malloc(sizeof(Vetor));
-  if(v == NULL) return; // Erro na alocação
+  if(v == NULL) return NULL; // Erro na alocação
   v->dados = malloc(sizeof(int) * limit);
-  if(v->dados == NULL) return; // Erro na alocação
+  if(v->dados == NULL) return NULL; // Erro na alocação
   v->length = 0;
   v->limit = limit;
+  return v;
 }
 
 void liberarVetor(Vetor *v) {
@@ -32,4 +33,20 @@ void listar(Vetor *v) {
 
 void zerar(Vetor *v) {
   v->length = 0;
+}
+
+void inserir(Vetor *v, int dado)
+{
+  if (v->length == v->limit)
+    printf("Vetor cheio!\n");
+  else
+  {
+    v->dados[v->length] = dado;
+    v->length++;
+  }
+}
+
+void atualizarUm(Vetor *v, int dadoAntigo, int dadoNovo)
+{
+  
 }
