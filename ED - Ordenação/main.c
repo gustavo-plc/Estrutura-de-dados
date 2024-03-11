@@ -10,12 +10,19 @@ int main()
 
     int array3[] = {25, 23, 27, 21, 22, 24, 29, 28};
 
+    int array4[] = {35, 33, 37, 31, 32, 34, 39, 38};
 
-    bubbleSort_invertido(array, qtd);
+    int arrayLista3[] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+
+    bubbleSort(array, qtd);
 
     selectionSort(array2, qtd);
 
     heapSort(qtd, array3);
+
+    selectionSortHalf(array4, qtd);
+
+    bubbleSortCompTroca(arrayLista3, 10);
 
     for (int i = 0; i < qtd; i++)
         printf("O indice %d do array 1 ordenado eh: %d\n", i, array[i]);
@@ -25,6 +32,12 @@ int main()
 
     for (int i = 0; i < qtd; i++)
         printf("O indice %d do array 3 ordenado eh: %d\n", i, array3[i]);
+
+    for (int i = 0; i < qtd; i++)
+        printf("O indice %d do array 4 ordenado eh: %d\n", i, array4[i]);
+
+    for (int i = 0; i < qtd; i++)
+        printf("O indice %d do array 5 ordenado eh: %d\n", i, arrayLista3[i]);
 
     return 0;
 }

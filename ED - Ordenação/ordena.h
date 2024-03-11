@@ -9,5 +9,6 @@ void heapSort(int n, int arr[n]);
 void construir_heap(int n, int arr[n]);
 void ajusta_heap(int n, int arr[n], int i);
 void selectionSortHalf(int arr[], int n);
+void bubbleSortCompTroca(int arr[], int n);
 
 #endif

@@ -36,6 +36,27 @@ void bubbleSort_invertido(int arr[], int n) //função para ordem decrescente, p
     }
 }
 
+void bubbleSortCompTroca(int arr[], int n)
+{
+    int i, j;
+    int troca = 0;
+    for (i = 0; i < n - 1; i++)
+    {
+        for (j = 0; j < n - i - 1; j++) ;  //para cada iteração do laço externo, o laço interno percorre o array
+        {
+            if (arr[j]>arr[j+1])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                troca++;
+            }
+        }
+    }
+    printf("O número de trocas foi: %d\n", troca);
+    printf("O número de comparações foi: %d\n", (n*(n-1))/2);
+}
+
 void selectionSort(int arr[], int n)
 {
     int i, j, min, temp;
@@ -78,24 +99,35 @@ void selectionSortV2(int arr[], int n)
 
 void selectionSortHalf(int arr[], int n)
 {
-    int i, j, min, max, temp;
+    int i, j, min, max, temp1, temp2;
     for (i = 0; i < n - 1; i++)
     {
         min = i;
-        max = n - i -1;
-        for (j = n - 1; j > 0 ; j--)
+        max = n - 1 - i;
+        for (j = i + 1; j < n - 2 - i; j++)
         {
             if(arr[j] < arr[min])
                 min = j;
+            if(arr[j] > arr[max])
+                max = j;    
         }
         if (min != i)
         {
-            temp = arr[i];
+            temp1 = arr[i];
             arr[i] = arr[min];
-            arr[min] = temp;
+            arr[min] = temp1;
+        }
+        if (max != i)
+        {
+            temp2 = arr[i];
+            arr[i] = arr[max];
+            arr[max] = temp2;
         }
     }
+
 }
+
+
 
 void ajusta_heap (int n, int arr[n], int i) 
 {
