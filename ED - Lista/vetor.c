@@ -102,7 +102,7 @@ int obterElemento(Vetor *v, int indice)
 }
 
 
-int deletarElemento(Vetor *v, int elemento) // deletar elemento buscado
+void deletarElemento(Vetor *v, int elemento) // deletar elemento buscado
 {
   int aux;
   for (int i = 0; i < v->length; i++)
