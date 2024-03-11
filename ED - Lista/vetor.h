@@ -9,5 +9,7 @@ void listar(Vetor *v);
 void zerar(Vetor *v); // basta definir lenght como zero
 void inserir(Vetor *v, int dado); // o dado é inserido no índice em que está o length do vetor. Caso length seja igual ao limite, a inserção nao pode ser realizada.
 void atualizarUm(Vetor *v, int dadoAntigo, int dadoNovo);
+void atualizarTodos(Vetor *v, int dadoAntigo, int dadoNovo);
+void atualizarIndice(Vetor *v, int indice, int dadoNovo);
 
 #endif // VETOR_H

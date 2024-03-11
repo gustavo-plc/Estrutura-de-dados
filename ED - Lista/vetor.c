@@ -51,9 +51,30 @@ void atualizarUm(Vetor *v, int dadoAntigo, int dadoNovo)
    for (int i = 0; i < v->length; i++)
     {
         if (v->dados[i] == dadoAntigo)
+        {
           v->dados[i] = dadoNovo;
-        else
-          printf("Valor buscado não encontrado.\n");
+          return;
+        }
     }
+    printf("Valor buscado não encontrado.\n");
 }
 
+void atualizarTodos(Vetor *v, int dadosAntigo, int dadosNovo)
+{
+   for (int i = 0; i < v->length; i++)
+    {
+      if (v->dados[i] == dadosAntigo)
+        v->dados[i] = dadosNovo;
+    }
+    //printf("Valor buscado não encontrado.\n");
+}
+
+void atualizarIndice(Vetor *v, int indice, int dadoNovo)
+{
+   
+        if (0<=indice<v->length)
+          v->dados[i] = dadosNovo;
+        else
+          printf("Valor buscado não encontrado.\n");
+    
+}
