@@ -38,11 +38,12 @@ void bubbleSort_invertido(int arr[], int n) //função para ordem decrescente, p
 
 void bubbleSortCompTroca(int arr[], int n)
 {
-    int troca = 0;
+    int troca,comp = 0;
     for (int i = 0; i < n - 1; i++)
     {
         for (int j = 0; j < n - i - 1; j++)  //para cada iteração do laço externo, o laço interno percorre o array
         {
+            comp++;
             if ((arr[j]) > (arr[j+1]))
             {
                 int temp = arr[j];
@@ -53,7 +54,7 @@ void bubbleSortCompTroca(int arr[], int n)
         }
     }
     printf("O numero de trocas foi: %d\n", troca);
-    printf("O numero de comparacoes foi: %d\n", (n*(n-1))/2);
+    printf("O numero de comparacoes foi: %d\n",comp);
 }
 
 void selectionSort(int arr[], int n)
@@ -129,25 +130,26 @@ void selectionSortHalf(int arr[], int n)
 void selectionSortCompTroca(int arr[], int n)
 {
    int i, j, min, temp;
-   int troca = 0;
+   int troca, comp = 0;
    for (i = 0; i < n - 1; i++)
    {
-       min = i;
+       min = i; //o índice do menor elemento é i a cada iteração
        for (j = i + 1; j < n; j++)
        {
-           if (arr[j] < arr[min])
-               min = j;
+            comp++; //contador de comparações é colocado dentro do laço mais interno
+            if (arr[j] < arr[min])
+               min = j; // o índice do menor elemento passa a ser j
        }
-       if (min != i)
+       if (min != i) //se min tiver sido alterado
        {
-           temp = arr[i];
-           arr[i] = arr[min];
-           arr[min] = temp;
-           troca++;
+           temp = arr[i]; //temp recebe o valor que era tido como menor
+           arr[i] = arr[min]; //o menor valor é colocado na posição correta, no índice i
+           arr[min] = temp; 
+           troca++; //contador de troca
        }
     } 
     printf("O numero de trocas foi: %d\n", troca);
-    printf("O numero de comparacoes foi: %d\n", n-i); 
+    printf("O numero de comparacoes foi: %d\n", comp); 
 }
 
 void ajusta_heap (int n, int arr[n], int i) 
