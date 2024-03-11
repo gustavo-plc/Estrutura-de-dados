@@ -53,8 +53,8 @@ void bubbleSortCompTroca(int arr[], int n)
             }
         }
     }
-    printf("O número de trocas foi: %d\n", troca);
-    printf("O número de comparações foi: %d\n", (n*(n-1))/2);
+    printf("O numero de trocas foi: %d\n", troca);
+    printf("O numero de comparacoes foi: %d\n", (n*(n-1))/2);
 }
 
 void selectionSort(int arr[], int n)
@@ -127,7 +127,29 @@ void selectionSortHalf(int arr[], int n)
 
 }
 
-
+void selectionSortCompTroca(int arr[], int n)
+{
+   int i, j, min, temp;
+   int troca = 0;
+   for (i = 0; i < n - 1; i++)
+   {
+       min = i;
+       for (j = i + 1; j < n; j++)
+       {
+           if (arr[j] < arr[min])
+               min = j;
+       }
+       if (min != i)
+       {
+           temp = arr[i];
+           arr[i] = arr[min];
+           arr[min] = temp;
+           troca++;
+       }
+    } 
+    printf("O numero de trocas foi: %d\n", troca);
+    printf("O numero de comparacoes foi: %d\n", n-i); 
+}
 
 void ajusta_heap (int n, int arr[n], int i) 
 {
