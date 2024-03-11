@@ -70,7 +70,7 @@ void selectionSortV2(int arr[], int n)
         if (maior != i)  //se foi encontrado elemento maior, aí sim faz a troca.
         {
             temp = arr[i];
-            arr[i] = arr[maior];
+            arr[i] = arr[maior]; 
             arr[maior] = temp;
         }
     }
