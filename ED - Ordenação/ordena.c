@@ -38,7 +38,7 @@ void bubbleSort_invertido(int arr[], int n) //função para ordem decrescente, p
 
 void bubbleSortCompTroca(int arr[], int n)
 {
-    int troca,comp = 0;
+    int troca = 0, comp = 0;
     for (int i = 0; i < n - 1; i++)
     {
         for (int j = 0; j < n - i - 1; j++)  //para cada iteração do laço externo, o laço interno percorre o array
@@ -130,7 +130,7 @@ void selectionSortHalf(int arr[], int n)
 void selectionSortCompTroca(int arr[], int n)
 {
    int i, j, min, temp;
-   int troca, comp = 0;
+   int troca = 0, comp = 0;
    for (i = 0; i < n - 1; i++)
    {
        min = i; //o índice do menor elemento é i a cada iteração
