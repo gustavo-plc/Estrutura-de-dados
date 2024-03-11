@@ -11,5 +11,6 @@ void inserir(Vetor *v, int dado); // o dado é inserido no índice em que está 
 void atualizarUm(Vetor *v, int dadoAntigo, int dadoNovo);
 void atualizarTodos(Vetor *v, int dadoAntigo, int dadoNovo);
 void atualizarIndice(Vetor *v, int indice, int dadoNovo);
+int buscarElemento(Vetor *v, int elemento);
 
 #endif // VETOR_H
