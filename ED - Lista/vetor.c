@@ -79,11 +79,30 @@ void atualizarIndice(Vetor *v, int indice, int dadoNovo)
 
 int buscarElemento(Vetor *v, int elemento)
 {
-   for (int i = 0; i < v->length; i++)
-    {
-      if (v->dados[i] == elemento)
-        return i;   
-    }
-    return -1;
+  for (int i = 0; i < v->length; i++)
+  {
+    if (v->dados[i] == elemento)
+      return i;   
+  }
+  return -1;
+}
+
+int obterElemento(Vetor *v, int indice)
+{
+  if (0<=indice<v->length)
+  {
+    for (int i = 0; i < v->length; i++)
+      {
+        if (v->dados[i] == elemento)
+        return v->dados[i];   
+      }
+  }  
+  else
+    printf("Valor inválido de índice.\n");
+}
+
+int deletarElemento(Vetor *v, int indice)
+{
+  
 }
 
