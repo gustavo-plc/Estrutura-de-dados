@@ -101,8 +101,35 @@ int obterElemento(Vetor *v, int indice)
     printf("Valor inválido de índice.\n");
 }
 
-int deletarElemento(Vetor *v, int indice)
+
+int deletarElemento(Vetor *v, int elemento) // deletar elemento buscado
 {
-  
+  int aux;
+  for (int i = 0; i < v->length; i++)
+  {
+    if (v->dados[i] == elemento)
+      aux = i;
+  }
+  for (int i = aux; i < v->length; i++)
+  {
+      v->dados[aux] = v->dados[aux+1];  
+  }
+  lenght--;
+}
+
+
+
+int deletarIndice(Vetor *v, int indice) // deletar elemento pelo índice
+{
+  if (0<=indice<v->length)
+  {
+    for (int i = indice; i < v->length; i++)
+      {
+         v->dados[indice] = v->dados[indice+1];  
+      }
+      lenght--;
+  }
+  else
+    printf("Valor inválido de índice.\n");
 }
 
