@@ -21,14 +21,14 @@ int main()
 
     //heapSort(qtd, array3);
 
-    //selectionSortHalf(array4, qtd);
+    selectionSortHalf(array4, qtd);
 
-    bubbleSortCompTroca(arrayLista3, qtd2);
+    //bubbleSortCompTroca(arrayLista3, qtd2);
 
     //selectionSortCompTroca(arrayLista3, qtd2);
 
-    for (int i = 0; i < qtd2; i++)
-        printf("O indice %d do array 1 ordenado eh: %d\n", i, arrayLista3[i]);
+    //for (int i = 0; i < qtd2; i++)
+        //printf("O indice %d do array 1 ordenado eh: %d\n", i, arrayLista3[i]);
     
     //for (int i = 0; i < qtd; i++)
         //printf("O indice %d do array 2 ordenado eh: %d\n", i, array2[i]);
@@ -36,8 +36,8 @@ int main()
     //for (int i = 0; i < qtd; i++)
         //printf("O indice %d do array 3 ordenado eh: %d\n", i, array3[i]);
 
-    //for (int i = 0; i < qtd; i++)
-        //printf("O indice %d do array 4 ordenado eh: %d\n", i, array4[i]);
+    for (int i = 0; i < qtd; i++)
+        printf("O indice %d do array 4 ordenado eh: %d\n", i, array4[i]);
 
     //for (int i = 0; i < 10; i++)
         //printf("O indice %d do array 5 ordenado eh: %d\n", i, arrayLista3[i]);
