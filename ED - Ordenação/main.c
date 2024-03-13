@@ -11,9 +11,11 @@ int main()
 
     int array3[] = {25, 23, 27, 21, 22, 24, 29, 28};
 
-    int array4[] = {35, 33, 37, 31, 32, 34, 39, 38};
+    
 
     int arrayLista3[] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+
+    int array4[] = {35, 33, 37, 31, 32, 34, 39, 38};
 
     //bubbleSort_invertido(array, qtd);
 

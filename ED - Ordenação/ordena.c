@@ -99,18 +99,17 @@ void selectionSortV2(int arr[], int n)
 
 void selectionSortHalf(int arr[], int n)
 {
-    int i, j, min, max, temp1, temp2, comp = 0;
-    for (i = 0; i < n - 1; i++)
+    int i, j, min, max, temp1, temp2;
+    for (i = 0; i < (n - 1)/2; i++)
     {
         min = i; //definição dos extremos como sendo máximo e mínimo
         max = n - 1 - i;
-        for (j = i + 1; j < n - 2 - i; j++)
+        for (j = i + 1; j < n - 1 - i; j++)
         {
-            comp++;
             if(arr[j] < arr[min])
                 min = j;
-            if(arr[n-i-2] > arr[max])
-                max = n-i-2;    
+            if(arr[n-j-1] > arr[max])
+                max = n-j-1;    
         }
         if (min != i) // ou seja, se min foi alterado...
         {
@@ -125,7 +124,6 @@ void selectionSortHalf(int arr[], int n)
             arr[max] = temp2;
         }
     }
-    printf("O número de comparações foi de: %d\n", comp);
 }
 
 void selectionSortCompTroca(int arr[], int n)
