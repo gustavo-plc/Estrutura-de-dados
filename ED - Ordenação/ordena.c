@@ -97,14 +97,14 @@ void selectionSortV2(int arr[], int n)
     }
 }
 
-void selectionSortHalf(int arr[], int n)
+void selectionSortHalf(int arr[], int n) //ainda não funciona corretamente, foi o máximo que conseguimos chegar. Sem IA!
 {
     int i, j, min, max, temp1, temp2;
     for (i = 0; i < (n - 1)/2; i++)
     {
         min = i; //definição dos extremos como sendo máximo e mínimo
         max = n - 1 - i;
-        for (j = i + 1; j < n - 1 - i; j++)
+        for (j = i + 1; j <= n - 1 - i; j++)
         {
             if(arr[j] < arr[min])
                 min = j;
