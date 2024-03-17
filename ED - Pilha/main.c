@@ -3,6 +3,7 @@
 
 int main() {
   Pilha *p = criarPilha(4);
+  
   p->dados[0] = 10;
   p->length++;
   p->dados[1] = 20;
@@ -11,7 +12,11 @@ int main() {
   p->length++;
   p->dados[3] = 40;
   p->length++;
-  pop(p);
+
+  exibirPilha(p);
+  
+  //pop(p);
+
 
   liberarPilha(p);
   return 0;

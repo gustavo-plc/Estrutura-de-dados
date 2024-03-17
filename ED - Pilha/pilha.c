@@ -2,11 +2,6 @@
 #include <stdio.h>
 #include "pilha.h"
 
-struct pilha {
-  unsigned int *dados;
-  int length;
-  int limit;
-};
 
 Pilha *criarPilha(int limit) {
   Pilha *p = malloc(sizeof(Pilha));
@@ -25,6 +20,15 @@ void liberarPilha(Pilha *p) {
   free(p->dados);
   free(p);
 }
+
+// Função para exibir os dados da pilha
+void exibirPilha(Pilha *p) {
+    printf("Valores na pilha:\n");
+    for (int i = 0; i < p->length; i++) {
+        printf("%u\n", p->dados[i]);
+    }
+}
+
 
 // a ser implementado pelo aluno
 
