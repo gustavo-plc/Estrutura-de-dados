@@ -19,6 +19,6 @@ void exibirPilha(Pilha *p);
 // a ser implementado pelo aluno
 int top(Pilha *p);
 int pop(Pilha *p);
-int push(Pilha *p, unsigned int dado);
+void push(Pilha *p, unsigned int dado);
 
 #endif // PILHA_H
