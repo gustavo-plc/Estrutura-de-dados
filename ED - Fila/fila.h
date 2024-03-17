@@ -1,6 +1,13 @@
 #ifndef FILA_H
 #define FILA_H
 
+
+struct fila {
+  unsigned int *dados;
+  int length;
+  int limit;
+};
+
 // protótipo da estrutura
 typedef struct fila Fila;
 

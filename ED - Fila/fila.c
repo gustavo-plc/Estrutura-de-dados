@@ -1,12 +1,8 @@
 #include <stdlib.h>
-
+#include <stdio.h>
 #include "fila.h"
 
-struct fila {
-  unsigned int *dados;
-  int length;
-  int limit;
-};
+
 
 Fila *criarFila(int limit) {
   Fila *f = malloc(sizeof(Fila));
@@ -14,7 +10,7 @@ Fila *criarFila(int limit) {
   f->dados = malloc(sizeof(unsigned int) * limit);
   if(f->dados == NULL) { // Erro na inicialização da fila
     free(f);
-    return;
+    return NULL;
   }
   f->length = 0;
   f->limit = limit;
@@ -29,8 +25,9 @@ void liberarFila(Fila *f) {
 void exibirFila(Fila *f) 
 {
   printf("\nValores na fila:\n");
-  for (int i = 0; i < p->length; i++)
+  for (int i = (f->length-1); i >=0 ; i--)
     printf("%u ", f->dados[i]);
+  printf("\nO primeiro da fila eh o %d\n",f->dados[f->length-1]);
   printf("\n");
 }
 

@@ -1,7 +1,7 @@
 #include "fila.h"
 
 int main() {
-  int tamanho = 4
+  int tamanho = 4;
   Fila *f = criarFila(tamanho);
 
   for (int i = 0; i < tamanho; i++)
