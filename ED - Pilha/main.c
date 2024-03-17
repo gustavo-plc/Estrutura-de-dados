@@ -13,11 +13,14 @@ int main() {
   p->dados[3] = 40;
   p->length++;
 
+
   exibirPilha(p);
-  
-  //pop(p);
+  int res1 = top(p);
+  int res2 = pop(p);
 
+  printf("%d\n", res1);
+  printf("%d\n", res2);
 
-  liberarPilha(p);
+  // liberarPilha(p);
   return 0;
 }

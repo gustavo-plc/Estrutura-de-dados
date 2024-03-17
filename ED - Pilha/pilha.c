@@ -22,11 +22,12 @@ void liberarPilha(Pilha *p) {
 }
 
 // Função para exibir os dados da pilha
-void exibirPilha(Pilha *p) {
-    printf("Valores na pilha:\n");
-    for (int i = 0; i < p->length; i++) {
-        printf("%u\n", p->dados[i]);
-    }
+void exibirPilha(Pilha *p) 
+{
+  printf("Valores na pilha:\n");
+  for (int i = 0; i < p->length; i++)
+    printf("%u\n", p->dados[i]);
+  printf("\n");
 }
 
 
@@ -43,5 +44,15 @@ int top(Pilha *p)
     return (p->dados[p->length - 1]);
 }
 
-// int pop(Pilha *p);
-// void push(Pilha *p, unsigned int dado);
+int pop(Pilha *p)
+{
+  if(p->length == 0) //pilha vazia
+    return -1;
+  return (p->dados[p->length - 1]);
+  p->length--;
+}
+
+void push(Pilha *p, unsigned int dado)
+{
+  
+}
