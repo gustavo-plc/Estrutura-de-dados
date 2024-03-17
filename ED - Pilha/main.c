@@ -21,6 +21,9 @@ int main() {
   printf("%d\n", res1);
   printf("%d\n", res2);
 
+  push(p, 300);
+
+
   // liberarPilha(p);
   return 0;
 }

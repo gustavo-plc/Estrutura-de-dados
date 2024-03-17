@@ -48,11 +48,15 @@ int pop(Pilha *p)
 {
   if(p->length == 0) //pilha vazia
     return -1;
-  return (p->dados[p->length - 1]);
   p->length--;
+  return (p->dados[p->length]);
 }
 
-void push(Pilha *p, unsigned int dado)
+int push(Pilha *p, unsigned int dado)
 {
-  
+  if (p->length == p->limit)
+    return -1;
+  p->dados[p->length] = dado;
+  p->length++;
+  exibirPilha(p);
 }
