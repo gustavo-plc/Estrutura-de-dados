@@ -1,5 +1,5 @@
 #include <stdlib.h>
-
+#include <stdio.h>
 #include "pilha.h"
 
 struct pilha {
@@ -14,7 +14,7 @@ Pilha *criarPilha(int limit) {
   p->dados = malloc(sizeof(unsigned int) * limit);
   if(p->dados == NULL) { // Erro na inicialização da pilha
     free(p);
-    return;
+    return NULL;
   }
   p->length = 0;
   p->limit = limit;
@@ -30,13 +30,13 @@ void liberarPilha(Pilha *p) {
 
 int top(Pilha *p)
 {
-  if p->lenght == 0
+  if (p->length == 0)
   {
     printf("Pilha vazia!\n");
     return -1;
   }
   else
-    return p->dados[length - 1];
+    return (p->dados[p->length - 1]);
 }
 
 // int pop(Pilha *p);
