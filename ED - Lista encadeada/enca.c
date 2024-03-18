@@ -45,6 +45,17 @@ void inserirInicio(No *inicio, int dado)
     return novo_inicio;
 }
 
+void inserirInicioV2(No **inicio, int dado) //dois asteriscos, acessa-se o nó
+{
+    if(!inicio) 
+        return;
+    No *novo_inicio = criar_no (dado);
+    if(!novo inicio) 
+        return;
+    novo_inicio->prox = *inicio;
+    *inicio = novo_inicio;
+}
+
 
 void inserirFim(No *inicio, int dado)
 {
@@ -59,6 +70,22 @@ void inserirFim(No *inicio, int dado)
     ant->prox = novo_no;
 }
 
+
+void inserirFimV3(No **inicio, int dado)
+{
+    No *no = *inicio;
+    No *novo_no = criarNo(dado);
+    if (no == NULL)
+    {
+        *inicio = novo_no;
+        return;
+    }
+    while (no->prox == NULL)
+    {
+        no = no->prox;
+    }
+    no->prox = novo_no;
+}
 
 
 void listar_for(No *inicio) 
