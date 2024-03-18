@@ -6,7 +6,7 @@ typedef struct no No;
 struct no
 {
     int dado;
-    No *prox; //struct no *prox;
+    struct no *prox;
 }
 
 no *criarNo(int dado)
@@ -20,6 +20,47 @@ no *criarNo(int dado)
     return novo_no;
 }
 
+
+
+void listar(No *inicio)
+{
+    No *no = inicio; 
+    while (no != NULL) 
+    {
+        printf(" (%d)->", no->dado);
+        no = no->prox;
+    }
+    printf("NULL\n");
+}
+
+
+void inserirInicio(No *inicio, int dado)
+{
+    if(!inicio) 
+        return;
+    No *novo_inicio = criar_no (dado);
+    if(!novo inicio) 
+        return;
+    novo_inicio->prox = inicio;
+    return novo_inicio;
+}
+
+
+void inserirFim(No *inicio, int dado)
+{
+    No *ant = NULL;
+    No *atual = inicio;
+    while (atual != NULL) 
+    { 
+        ant = atual;
+        atual = atual->prox;
+    }
+    No *novo_no = criar_no(dado); 
+    ant->prox = novo_no;
+}
+
+
+
 void listar_for(No *inicio) 
 { 
     for (No *no = inicio; no != NULL; no = no->prox)   //LISTANDO COM FOR
@@ -29,7 +70,21 @@ void listar_for(No *inicio)
     
 }
 
-void inserirInicio(No *inicio, int dado)
+
+
+No *deletar_inicio(No *inicio)
 {
-    
+
+}
+
+
+void deletar_fim(No *inicio)
+{
+
+}
+
+
+void deletar(No *inicio, int dado)
+{
+
 }
