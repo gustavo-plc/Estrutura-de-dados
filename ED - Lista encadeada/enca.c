@@ -20,6 +20,7 @@ No *criarNo(int dado)
     return novo_no;
 }
 
+
 /*
 
 void listar(No *inicio)
