@@ -21,20 +21,23 @@ No *criarNo(int dado)
 }
 
 
-/*
 
-void listar(No *inicio)
+
+void listar(No *inicio)  //função recebe o nó de início
 {
-    No *no = inicio; 
-    while (no != NULL) 
+    No *no = inicio; //criação de um ponteiro auxiliar que recebe o endereço do nó de início
+    while (no != NULL) //enquanto o ponteiro auxiliar não finaliza a lista... faça:
     {
-        printf(" (%d)->", no->dado);
-        no = no->prox;
+        printf(" (%d)->", no->dado); // imprime o valor do nó
+        no = no->prox; //endereço desse nó (que inicialmente é o nó de início) é atualizado para o endereço que consta no atributo prox do nó, ou seja, 
+        //o endereço do próximo nó é colocado no endereço do nó atual. Isso faz o ponteiro auxiliar percorrer a lista.
     }
     printf("NULL\n");
 }
 
 
+
+/*
 void inserirInicio(No *inicio, int dado)
 {
     if(!inicio) 
