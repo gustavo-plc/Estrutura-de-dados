@@ -33,6 +33,23 @@ void listar(No *inicio)  //função recebe o nó de início
 }
 
 
+void listarV2(No *inicio)  //função recebe o nó de início
+{
+    for (No *no = inicio; no != NULL/*(condição de continuidade do for)*/; no = no->prox)  //o início do for é feito criando e inicializando uma vriável
+    // do tipo nó, com o valor de início. A quantidade de iterações é baseada nas propriedades dos nós, pois não 
+    //é mais possível contar com os índices de array.  
+
+    //a condição de parada é  o nó ter o endereço NULL, o que indica que a lista chegou ao fim.
+    
+    //incremento: será atualizado o endereço do nó local com o endereço do próximo nó. Esse é o incremento do for. 
+    {
+        printf(" (%d)->", no->dado); // imprime o valor do nó
+        
+    }
+    printf("NULL\n");
+}
+
+
 
 /*
 void inserirInicio(No *inicio, int dado)

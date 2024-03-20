@@ -31,19 +31,21 @@ int main()
     if(!inicio->prox->prox->prox)  //com essa disposição dos IFs, a cada criação e encadeamento de nó é feita uma verificação se a alocação dinâmica foi correta.)
         return 1;
 
-    listar(inicio);
+    //listar(inicio);
 
-/*
-    No *nova_lista = NULL;
-    inserirInicio(&nova_lista, 1);
-    inserirInicio(&nova_lista, 2);
-    inserirInicio(&nova_lista, 3);
+    listarV2(inicio);
 
-    nova_lista = inserirFim(nova_lista, 1);
-    nova_lista = inserirFim(nova_lista, 2);
-    nova_lista = inserirFim(nova_lista, 3);
+    /*
+        No *nova_lista = NULL;
+        inserirInicio(&nova_lista, 1);
+        inserirInicio(&nova_lista, 2);
+        inserirInicio(&nova_lista, 3);
+
+        nova_lista = inserirFim(nova_lista, 1);
+        nova_lista = inserirFim(nova_lista, 2);
+        nova_lista = inserirFim(nova_lista, 3);
 
 
-    return 0;
-    */
+        return 0;
+        */
 }

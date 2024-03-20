@@ -13,6 +13,8 @@ No *criarNo(int dado);
 
 void listar(No *inicio);
 
+void listarV2(No *inicio);
+
 /*
 void inserirInicio(No *inicio, int dado);
 void inserirFim(No *inicio, int dado);
