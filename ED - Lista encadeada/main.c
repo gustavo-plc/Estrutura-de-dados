@@ -1,3 +1,5 @@
+#include "enca.h"
+
 int main()
 {
     // -- CRIANDO NÓS E JÁ ENCADEANDO --
@@ -26,11 +28,12 @@ int main()
     
     inicio->prox->prox->prox = criarNo(4);
 
-    if(!inicio->prox->prox->prox  //com essa disposição dos IFs, a cada criação e encadeamento de nó é feita uma verificação se a alocação dinâmica foi correta.)
+    if(!inicio->prox->prox->prox)  //com essa disposição dos IFs, a cada criação e encadeamento de nó é feita uma verificação se a alocação dinâmica foi correta.)
         return 1;
 
+    listar(inicio);
 
-
+/*
     No *nova_lista = NULL;
     inserirInicio(&nova_lista, 1);
     inserirInicio(&nova_lista, 2);

@@ -6,7 +6,8 @@
         "stdlib.h": "c",
         "ordena.h": "c",
         "stdio.h": "c",
-        "fila.h": "c"
+        "fila.h": "c",
+        "enca.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
