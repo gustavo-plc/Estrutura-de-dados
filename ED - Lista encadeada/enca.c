@@ -5,11 +5,6 @@
 //linterface (protótipo)
 typedef struct no No;
 
-struct no
-{
-    int dado;
-    struct no *prox;
-};
 
 No *criarNo(int dado)
 {

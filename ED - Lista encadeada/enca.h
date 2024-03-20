@@ -3,6 +3,12 @@
 
 typedef struct no No;
 
+struct no
+{
+    int dado;
+    struct no *prox;
+};
+
 No *criarNo(int dado);
 
 void listar(No *inicio);
