@@ -1,7 +1,10 @@
 int main()
 {
   
-inicio = criar_no (1);
+
+
+
+/*inicio = criar_no (1);
 // se inicio == NULL 
 if(!inicio) 
     return 1;
@@ -31,4 +34,5 @@ nova_lista = inserirFim(nova_lista, 3);
 
 
 return 0;
+*/
 }

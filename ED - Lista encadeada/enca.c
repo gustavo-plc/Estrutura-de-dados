@@ -9,7 +9,7 @@ struct no
     struct no *prox;
 }
 
-no *criarNo(int dado)
+No *criarNo(int dado)
 {
     No *novo_no = malloc(sizeof(No));
     if(novo_no) //novo_no != NULL
@@ -20,7 +20,7 @@ no *criarNo(int dado)
     return novo_no;
 }
 
-
+/*
 
 void listar(No *inicio)
 {
@@ -115,3 +115,5 @@ void deletar(No *inicio, int dado)
 {
 
 }
+
+*/
