@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"ponto.h": "c",
+			"calc.h": "c",
+			"limits": "c",
+			"stdlib.h": "c",
+			"ordena.h": "c",
+			"stdio.h": "c",
+			"fila.h": "c",
+			"enca.h": "c"
+		}
+	}
+}

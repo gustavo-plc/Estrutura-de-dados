@@ -31,9 +31,11 @@ int main()
     if(!inicio->prox->prox->prox)  //com essa disposição dos IFs, a cada criação e encadeamento de nó é feita uma verificação se a alocação dinâmica foi correta.)
         return 1;
 
-    //listar(inicio);
+    listar(inicio);
 
     listarV2(inicio);
+
+    
 
     /*
         No *nova_lista = NULL;
