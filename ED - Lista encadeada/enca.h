@@ -15,8 +15,9 @@ void listar(No *inicio);
 
 void listarV2(No *inicio);
 
+No *inserirInicio(No *inicio, int dado)
+
 /*
-void inserirInicio(No *inicio, int dado);
 void inserirFim(No *inicio, int dado);
 
 void listar_for(No *inicio); //(Utilizando laço for)

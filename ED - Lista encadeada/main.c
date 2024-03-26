@@ -35,7 +35,9 @@ int main()
 
     listarV2(inicio);
 
-    
+    inserirInicio(inicio, 14);
+
+    listarV2(inicio);
 
     /*
         No *nova_lista = NULL;

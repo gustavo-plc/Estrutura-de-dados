@@ -51,18 +51,19 @@ void listarV2(No *inicio)  //função recebe o nó de início
 
 
 
-/*
-void inserirInicio(No *inicio, int dado)
+No *inserirInicio(No *inicio, int dado)
 {
     if(!inicio) 
         return;
-    No *novo_inicio = criar_no (dado);
-    if(!novo inicio) 
+    No *novo_inicio = criarNo(dado);
+    if(!novo_inicio) 
         return;
     novo_inicio->prox = inicio;
     return novo_inicio;
 }
 
+
+/*
 void inserirInicioV2(No **inicio, int dado) //dois asteriscos, acessa-se o nó
 {
     if(!inicio) 
