@@ -15,6 +15,7 @@ struct lista
 {
     No *inicio, *fim;
     uint length;
+    uint capacidade;
 };
 
 No *criarNo(int dado);

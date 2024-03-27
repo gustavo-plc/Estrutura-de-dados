@@ -28,7 +28,7 @@ int main()
     //criação da lista
     Lista *lista = criarLista();
 
-
+    listar(lista);
 
     return 0;
 }
