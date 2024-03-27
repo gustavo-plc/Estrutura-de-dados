@@ -35,9 +35,13 @@ int main()
 
     listarV2(inicio);
 
-    inserirInicio(inicio, 14);
+    inserirInicio(&inicio, 5);
 
     listarV2(inicio);
+
+    inserirFim(&inicio, 15);
+
+    listar(inicio);
 
     /*
         No *nova_lista = NULL;
@@ -52,4 +56,5 @@ int main()
 
         return 0;
         */
+
 }

@@ -51,17 +51,32 @@ void listarV2(No *inicio)  //função recebe o nó de início
 
 
 
-No *inserirInicio(No *inicio, int dado)
+No *inserirInicio(No **inicio, int dado)
 {
-    if(!inicio) 
-        return;
-    No *novo_inicio = criarNo(dado);
+    if(!(*inicio)) 
+        return NULL;
+    No *novo_inicio = criarNo(dado); //criação de um nó avulso e atribuição dele à variável local *novo_início
     if(!novo_inicio) 
-        return;
-    novo_inicio->prox = inicio;
+        return NULL;
+    novo_inicio->prox = *inicio;
+    *inicio = novo_inicio;
     return novo_inicio;
 }
 
+
+No *inserirFim(No **inicio, int dado)
+{
+    if(!(*inicio)) 
+        return NULL;
+    No *novo_fim = criarNo(dado); //criação de um nó avulso e atribuição dele à variável local *novo_fim
+    if(!novo_fim) 
+        return NULL;
+    No *inicio_local = *inicio;
+    while((inicio_local->prox) != NULL)
+        inicio_local = inicio_local->prox; // para onde o nó está apontando se torna o endereço dele (forma de percorrer a lista encadeada)
+    (inicio_local->prox) = novo_fim;
+    return novo_fim;
+}
 
 /*
 void inserirInicioV2(No **inicio, int dado) //dois asteriscos, acessa-se o nó
