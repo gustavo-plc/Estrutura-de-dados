@@ -15,7 +15,7 @@ struct lista
 {
     No *inicio, *fim;
     uint length;
-}
+};
 
 No *criarNo(int dado);
 Lista *criarLista(); // cria uma lista vazia

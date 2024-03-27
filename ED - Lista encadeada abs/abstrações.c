@@ -1,6 +1,5 @@
-#include <stdio.h>
 #include <stdlib.h>
-
+#include "abtracoes.h"
 
 
 //criar nó
