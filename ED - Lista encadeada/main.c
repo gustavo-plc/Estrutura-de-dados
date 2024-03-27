@@ -39,11 +39,11 @@ int main()
 
     listarV2(inicio);
 
-    inserirFim(&inicio, 15);
+    inserirFim(&inicio, 5);
 
     listar(inicio);
 
-    inserirFim(&inicio, 199);
+    inserirFim(&inicio, 6);
 
     listar(inicio);
 
