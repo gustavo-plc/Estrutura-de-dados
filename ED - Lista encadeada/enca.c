@@ -95,20 +95,29 @@ No *inserirFimV2(No **inicio, int dado)
 
 
 
-
-No *deletar_inicio(No *inicio)
+No *deletar_inicio(No **inicio)
 {
-
+    if(!(*inicio)) 
+        return NULL;
+    *inicio = (*inicio)->prox;
+    return *inicio;
 }
 
-
-void deletar_fim(No *inicio)
+void deletar_fim(No **inicio)
 {
-
+    if(!(*inicio)) 
+        return;
+    No *atual = *inicio;
+    No *anterior = NULL;
+    while(atual->prox != NULL)
+    {
+        anterior = atual; // a ordem das atualizações importa!
+        atual = atual->prox;
+    }
+    anterior->prox = NULL;
 }
-
 
 void deletar(No *inicio, int dado)
 {
-
+    
 }

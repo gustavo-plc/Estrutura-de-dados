@@ -47,12 +47,16 @@ int main()
 
     listar(inicio);
 
-    deletar_inicio(inicio);
+    deletar_inicio(&inicio); //quando a variável a ser alterada pela função já é um ponteiro, usa-se ponteiro para ponteiro para alterá-la. 
 
     listar(inicio);
 
+    deletar_fim(&inicio);
 
+    listar(inicio);
 
+    deletar(inicio, 3);
 
+    listar(inicio);
 
 }

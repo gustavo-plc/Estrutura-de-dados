@@ -21,6 +21,10 @@ No *inserirFim(No **inicio, int dado);
 
 No *inserirFimV2(No **inicio, int dado);
 
-No *deletar_inicio(No *inicio);
+No *deletar_inicio(No **inicio);
+
+void deletar_fim(No **inicio);
+
+void deletar(No *inicio, int dado);
 
 #endif // ENCA_H
