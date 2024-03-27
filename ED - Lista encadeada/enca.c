@@ -83,14 +83,14 @@ No *inserirFimV2(No **inicio, int dado)
 {
     if(!(*inicio)) 
         return NULL;
-    No *novo_fim = criarNo(dado); //criação de um nó avulso e atribuição dele à variável local *novo_fim
-    if(!novo_fim) 
+    No *no = *inicio; // criação de um nó local e passagem do nó início para ele
+    while(no->prox != NULL)
+        no = no->prox; // para onde o nó está apontando se torna o endereço dele (forma de percorrer a lista encadeada)
+    No *novo_no = criarNo(dado);
+    if(!novo_no)
         return NULL;
-    No *inicio_local = *inicio;
-    while((inicio_local->prox) != NULL)
-        inicio_local = inicio_local->prox; // para onde o nó está apontando se torna o endereço dele (forma de percorrer a lista encadeada)
-    (inicio_local->prox) = novo_fim;
-    return novo_fim;
+    no->prox = novo_no;
+    return novo_no;
 }
 
 
