@@ -30,5 +30,9 @@ int main()
 
     listar(lista);
 
+    inserirInicio(lista, 1);
+
+    listar(lista);
+
     return 0;
 }
