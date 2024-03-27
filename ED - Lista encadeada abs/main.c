@@ -42,5 +42,25 @@ int main()
 
     listar(lista);
 
+    enfileira(lista, 9); //entra no rabo da fila, ou seja, no final da lista
+
+    listar(lista);
+
+    desenfileira(lista); //sai da cabeça da fila, ou seja, do ínicio da lista
+
+    listar(lista);
+
+    push(lista, 10); //inserir novo elemento no topo da pilha, ou seja, no começo da lista.
+
+    listar(lista);
+
+    push(lista, 20); //inserir novo elemento no topo da pilha, ou seja, no começo da lista.
+
+    listar(lista);
+
+    push(lista, 30); //inserir novo elemento no topo da pilha, ou seja, no começo da lista.
+
+    listar(lista);
+
     return 0;
 }

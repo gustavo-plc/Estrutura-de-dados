@@ -11,7 +11,7 @@ struct no
     struct no *prox;
 };
 
-struct lista 
+struct lista  //uma lista é composta por nós
 {
     No *inicio, *fim;
     uint length;
@@ -24,11 +24,10 @@ void listar(Lista *lista);
 void inserirInicio(Lista *lista, int dado); // inserir o primeiro elemento da lista
 void inserirFim(Lista *lista, int dado);
 
-enfileira(fila, int dado);
-No *desenfileira(fila);
-push(pilha, p1);
-push(pilha, p2);
-push(pilha, p3);
-No *pop(pilha);
+void enfileira(Lista *fila, int dado);
+No *desenfileira(Lista *fila);
+void push(Lista *pilha, int dado);
+
+No *pop(Lista pilha);
 
 #endif

@@ -27,29 +27,6 @@ Lista *criarLista() //cria uma lista vazia
     return lista;
 }
 
-Lista *criarFila() //cria uma lista vazia
-{
-    Lista *fila = malloc(sizeof(Lista)); //ou retorna NULL ou retorna um endereço de memória
-    if(fila) //no != NULL
-    {
-        fila->inicio = NULL;
-        fila->fim = NULL;
-        fila->length = 0;
-    }
-    return fila;
-}
-
-Lista *criarPilha() //cria uma lista vazia
-{
-    Lista *pilha = malloc(sizeof(Lista)); //ou retorna NULL ou retorna um endereço de memória
-    if(pilha) //no != NULL
-    {
-        pilha->inicio = NULL;
-        pilha->fim = NULL;
-        pilha->length = 0;
-    }
-    return pilha;
-}
 
 void listar(Lista *lista)
 {
@@ -113,16 +90,24 @@ ini           fim
 */
 
 
-enfileira(fila, int dado)
+void enfileira(Lista *fila, int dado)
 {
     if(!fila)
         return;
-    No *novo = malloc(sizeof(No));
+    No *novo = criarNo(dado);
     if(!novo)
         return;
-    fila->fim
-    novo->dado = dado;
 
+    if(fila->fim == NULL)  //para verificar se a lista é vazia
+    {
+        fila->fim = novo;
+        fila->inicio = novo;
+        fila->length++;
+        return;
+    }
+    No *antigo_fim = fila->fim; 
+    antigo_fim->prox = novo;
+    fila->fim = novo; 
 }
 
 /*Enfileira
@@ -133,9 +118,19 @@ ini                  fim
 
 
 
-No *desenfileira(fila)
+No *desenfileira(Lista *fila) // FIFO: ou seja, sai o primeiro da fila, pois é uma fila!
 {
-
+    if(!fila)
+        return NULL;
+    if(fila->fim == NULL)  //para verificar se a lista é vazia
+    {
+        printf("Não há elementos para remover!\n");
+        return NULL;
+    }
+    No *novo = fila->inicio;
+    fila->inicio = novo->prox;
+    fila->length--;
+    return fila->inicio;
 }
 
 /*Desenfileira
@@ -145,9 +140,23 @@ ini                  fim
 retorna: p1
 */
 
-push(pilha, p1)
+void push(Lista *pilha, int dado)  //LIFO na pilha, exclusões e inclusões são feitas em uma única extermidade, ou seja, no final da lista.
+//se estou inserindo um dado, ele "entra" na pilha na forma de nó.
+//Portanto, devo criar um nó!
 {
-
+    if(!pilha)
+        return;
+    No *novo = criarNo(dado);
+    
+    if(pilha->fim == NULL)  //para verificar se a pilha está vazia
+    {
+        pilha->inicio = novo;
+        pilha->fim = novo;
+        pilha->length++;
+    }
+    No *antigo_inicio = pilha->inicio;
+    pilha->inicio = novo;
+    novo->prox = antigo_inicio;
 }
 
 /*Push
@@ -156,10 +165,10 @@ topo
 (p1) -> NULL
 */
 
-push(pilha, p2)
-{
+//push(pilha, p2)
+//{
 
-}
+//}
 
 /*Push
 topo
@@ -167,10 +176,10 @@ topo
 (p2) -> (p1) -> NULL
 */
 
-push(pilha, p3)
-{
+//push(pilha, p3)
+//{
 
-}
+//}
 
 /*Push
 topo
