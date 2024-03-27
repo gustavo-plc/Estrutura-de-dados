@@ -79,3 +79,81 @@ void inserirFim(Lista *lista, int dado)  // terminar de fazer com base no códig
     lista->fim = novo_fim; 
     lista->length++;
 }
+
+//ILUSTRAÇÃO INICIAL
+/*
+ini           fim
+\/            \/
+(p1)->   ... (p8)-> NULL
+*/
+
+
+enfileira(fila, "p9")
+{
+
+}
+
+/*Enfileira
+ini                  fim
+\/                   \/
+(p1)->   ... (p8)-> (p9) -> NULL
+*/
+
+
+
+desenfileira(fila)
+{
+
+}
+
+/*Desenfileira
+ini                  fim
+\/                   \/
+(p2)->   ... (p8)-> (p9) -> NULL
+retorna: p1
+*/
+
+push(pilha, p1)
+{
+
+}
+
+/*Push
+topo
+\/
+(p1) -> NULL
+*/
+
+push(pilha, p2)
+{
+
+}
+
+/*Push
+topo
+\/
+(p2) -> (p1) -> NULL
+*/
+
+push(pilha, p3)
+{
+
+}
+
+/*Push
+topo
+\/
+(p3) -> (p2) -> (p1) -> NULL
+*/
+
+pop(pilha)
+{
+    
+}
+
+/*Pop
+topo
+\/
+(p2) -> (p1) -> NULL
+retorna: p3
+*/
