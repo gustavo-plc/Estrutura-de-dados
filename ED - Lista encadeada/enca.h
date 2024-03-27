@@ -19,6 +19,8 @@ No *inserirInicio(No **inicio, int dado);
 
 No *inserirFim(No **inicio, int dado);
 
+No *inserirFimV2(No **inicio, int dado);
+
 /*
 void inserirFim(No *inicio, int dado);
 

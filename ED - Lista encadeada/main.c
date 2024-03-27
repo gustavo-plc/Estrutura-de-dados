@@ -43,6 +43,10 @@ int main()
 
     listar(inicio);
 
+    inserirFim(&inicio, 199);
+
+    listar(inicio);
+
     /*
         No *nova_lista = NULL;
         inserirInicio(&nova_lista, 1);
