@@ -101,7 +101,7 @@ ini                  fim
 
 
 
-desenfileira(fila)
+No *desenfileira(fila)
 {
 
 }
@@ -146,9 +146,9 @@ topo
 (p3) -> (p2) -> (p1) -> NULL
 */
 
-pop(pilha)
+No *pop(pilha)
 {
-    
+
 }
 
 /*Pop
