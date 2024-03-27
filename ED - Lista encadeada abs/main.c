@@ -38,5 +38,9 @@ int main()
 
     listar(lista);
 
+    inserirFim(lista, 3);
+
+    listar(lista);
+
     return 0;
 }

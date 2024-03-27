@@ -69,11 +69,13 @@ void inserirFim(Lista *lista, int dado)  // terminar de fazer com base no códig
         return;
     if(lista->fim == NULL)  //para verificar se a lista é vazia
     {
-        lista->fim = novo_fim; // atualiza o fim da lista para o novo nó criado, já que estou atualizando no fim
-        lista->inicio = novo_fim;
+        lista->fim = novo_fim; // atualiza o fim da lista para o novo nó criado, já que estou inserindo no fim, o descritor fim da lista apontará para ele.
+        lista->inicio = novo_fim; //o início da lista também receberá esse nó, já que ele é o primeiro.
+        lista->length++;
+        return;
     }
-
-    
-        lista->inicio = novo_fim; 
+    No *antigo_fim = lista->fim;
+    antigo_fim->prox = novo_fim;
+    lista->fim = novo_fim; 
     lista->length++;
 }
