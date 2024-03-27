@@ -1,5 +1,6 @@
 #include <stdlib.h>
-#include "abtracoes.h"
+#include <stdio.h>
+#include "abstracoes.h"
 
 
 //criar nó
@@ -58,7 +59,7 @@ void inserirInicio(Lista *lista, int dado)  //inserir o primeiro elemento da lis
     lista->length++;
 }
 
-void inserirFim(Lista lista, int dado)  // terminar de fazer com base no código anterior mmm
+void inserirFim(Lista *lista, int dado)  // terminar de fazer com base no código anterior mmm
 {
     if(!lista)
         return;

@@ -1,29 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "abtracoes.h"
+#include "abstracoes.h"
 
 int main()
 {
+    //criação e concatenação dos nós
     No *inicio = criarNo(1);
     if(!inicio)
-        return;
+        return -1;
 
-    No *inicio->prox = criarNo(2);
+    inicio->prox = criarNo(2);
     if(!inicio->prox)
-        return;
+        return -1;
 
-    No *inicio->prox->prox = criarNo(3);
+    inicio->prox->prox = criarNo(3);
     if(!inicio->prox->prox)
-        return;
+        return -1;
 
-    No *inicio->prox->prox->prox = criarNo(4);
+    inicio->prox->prox->prox = criarNo(4);
     if (!inicio->prox->prox->prox)
-        return;
+        return -1;
 
-    No *inicio->prox->prox->prox->prox = criarNo(5);
+    inicio->prox->prox->prox->prox = criarNo(5);
     if(!inicio->prox->prox->prox->prox)
-        return;
+        return -1;
 
-        
+    //criação da lista
+    Lista *lista = criarLista();
+
+
+
     return 0;
 }

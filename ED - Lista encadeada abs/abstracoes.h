@@ -21,6 +21,6 @@ No *criarNo(int dado);
 Lista *criarLista(); // cria uma lista vazia
 void listar(Lista *lista);
 void inserirInicio(Lista *lista, int dado); // inserir o primeiro elemento da lista
-void inserirFim(Lista lista, int dado);     // terminar de fazer com base no código anterior mmm
+void inserirFim(Lista *lista, int dado);     // terminar de fazer com base no código anterior mmm
 
 #endif

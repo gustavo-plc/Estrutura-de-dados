@@ -13,7 +13,8 @@
 			"ordena.h": "c",
 			"stdio.h": "c",
 			"fila.h": "c",
-			"enca.h": "c"
+			"enca.h": "c",
+			"abstracoes.h": "c"
 		}
 	}
 }
