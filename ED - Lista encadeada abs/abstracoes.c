@@ -27,6 +27,30 @@ Lista *criarLista() //cria uma lista vazia
     return lista;
 }
 
+Lista *criarFila() //cria uma lista vazia
+{
+    Lista *fila = malloc(sizeof(Lista)); //ou retorna NULL ou retorna um endereço de memória
+    if(fila) //no != NULL
+    {
+        fila->inicio = NULL;
+        fila->fim = NULL;
+        fila->length = 0;
+    }
+    return fila;
+}
+
+Lista *criarPilha() //cria uma lista vazia
+{
+    Lista *pilha = malloc(sizeof(Lista)); //ou retorna NULL ou retorna um endereço de memória
+    if(pilha) //no != NULL
+    {
+        pilha->inicio = NULL;
+        pilha->fim = NULL;
+        pilha->length = 0;
+    }
+    return pilha;
+}
+
 void listar(Lista *lista)
 {
     if(lista->inicio == NULL)
@@ -80,6 +104,7 @@ void inserirFim(Lista *lista, int dado)  // terminar de fazer com base no códig
     lista->length++;
 }
 
+//as funções abaixo usarão a estrutura de lista para representar filas e pilhas.
 //ILUSTRAÇÃO INICIAL
 /*
 ini           fim
@@ -88,8 +113,15 @@ ini           fim
 */
 
 
-enfileira(fila, "p9")
+enfileira(fila, int dado)
 {
+    if(!fila)
+        return;
+    No *novo = malloc(sizeof(No));
+    if(!novo)
+        return;
+    fila->fim
+    novo->dado = dado;
 
 }
 
