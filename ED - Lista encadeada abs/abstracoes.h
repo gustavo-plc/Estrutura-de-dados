@@ -28,6 +28,6 @@ void enfileira(Lista *fila, int dado);
 No *desenfileira(Lista *fila);
 void push(Lista *pilha, int dado);
 
-No *pop(Lista pilha);
+No *pop(Lista *pilha);
 
 #endif

@@ -62,5 +62,13 @@ int main()
 
     listar(lista);
 
+    pop(lista);
+
+    listar(lista);
+
+    pop(lista);
+
+    listar(lista);
+
     return 0;
 }

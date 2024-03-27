@@ -108,6 +108,7 @@ void enfileira(Lista *fila, int dado)
     No *antigo_fim = fila->fim; 
     antigo_fim->prox = novo;
     fila->fim = novo; 
+    fila->length++;
 }
 
 /*Enfileira
@@ -157,6 +158,7 @@ void push(Lista *pilha, int dado)  //LIFO na pilha, exclusões e inclusões são
     No *antigo_inicio = pilha->inicio;
     pilha->inicio = novo;
     novo->prox = antigo_inicio;
+    pilha->length++;
 }
 
 /*Push
@@ -187,9 +189,14 @@ topo
 (p3) -> (p2) -> (p1) -> NULL
 */
 
-No *pop(pilha)
+No *pop(Lista *pilha)
 {
-
+    if(!pilha)
+        return NULL;
+    No *novo = pilha->inicio;
+    pilha->inicio = novo->prox;
+    pilha->length--;
+    return novo;
 }
 
 /*Pop
