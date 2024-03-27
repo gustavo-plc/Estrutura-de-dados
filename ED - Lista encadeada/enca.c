@@ -117,7 +117,18 @@ void deletar_fim(No **inicio)
     anterior->prox = NULL;
 }
 
-void deletar(No *inicio, int dado)
+void deletar(No **inicio, int dado)
 {
-    
+    if(!(*inicio)) 
+        return;
+    No *seguinte = (*inicio)->prox;
+    No *atual = *inicio;
+    No *anterior = NULL;
+    while(atual->dado != dado)
+    {
+        anterior = atual; // a ordem das atualizações importa!
+        atual = seguinte;
+        seguinte = seguinte->prox;
+    }
+    anterior->prox = seguinte;
 }

@@ -55,7 +55,7 @@ int main()
 
     listar(inicio);
 
-    deletar(inicio, 3);
+    deletar(&inicio, 4);
 
     listar(inicio);
 
