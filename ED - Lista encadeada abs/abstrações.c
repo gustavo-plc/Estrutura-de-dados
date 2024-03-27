@@ -1,21 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct lista Lista;
-typedef struct no No;
-typedef unsigned int uint;
 
-struct no
-{
-    int dado;
-    struct no *prox;
-};
-
-struct lista 
-{
-    No *inicio, *fim;
-    uint length;
-}
 
 //criar nó
 No *criarNo(int dado)
