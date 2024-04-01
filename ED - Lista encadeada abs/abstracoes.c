@@ -210,5 +210,44 @@ retorna: p3
 
 void inserirOrdenado(Lista *lista, int dado)
 {
+    if (!lista)
+        return;
 
+    No *novo = criarNo(dado);
+    if (!novo)
+        return;
+
+    No *anterior = NULL;
+    No *atual = lista->inicio;
+
+    while (atual != NULL && atual->dado < dado) 
+    {
+        anterior = atual; //percorre-se a lista, atualizando o nó atual e anterior.
+        atual = atual->prox;
+    }
+
+    if (anterior == NULL) // caso em que a inserção é no início
+    { 
+        lista->inicio = novo; // o início da lista será o novo nó
+        if (atual == NULL) // só atualiza o fim se o if interno também for NULL
+            lista->fim = novo; // o fim da lista também aponta para o novo nó
+    } 
+    else 
+    { 
+        anterior->prox = novo; // inserção no meio
+        if (atual == NULL) // ao chegar no último nó, o atual será NULL, porque ali em cima ele recebe o atual->prox(NULL)
+            lista->fim = novo; //insere o novo nó no final da lista.
+    }
+
+    novo->prox = atual; //aponta o novo nó para o nó posterior. 
+    lista->length++; // incremento do tamanho da lista
 }
+
+void deletarInicio(Lista *lista)
+{
+    if(!lista)
+        return;
+    No *aux = lista->inicio->prox;
+    lista->inicio = aux;
+}
+

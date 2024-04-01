@@ -70,5 +70,18 @@ int main()
 
     listar(lista);
 
+    inserirOrdenado(lista, 4);
+
+    listar(lista);
+
+    deletarInicio(lista);
+
+    listar(lista);
+
+    deletarInicio(lista);
+
+    listar(lista);
+    
     return 0;
+
 }

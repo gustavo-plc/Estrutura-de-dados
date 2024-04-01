@@ -31,5 +31,6 @@ void push(Lista *pilha, int dado);
 No *pop(Lista *pilha);
 
 void inserirOrdenado(Lista *lista, int dado);
+void deletarInicio(Lista *lista);
 
 #endif
