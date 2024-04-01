@@ -205,3 +205,10 @@ topo
 (p2) -> (p1) -> NULL
 retorna: p3
 */
+
+// RESOLUÇÃO DA LISTA 5
+
+void inserirOrdenado(Lista *lista, int dado)
+{
+
+}
