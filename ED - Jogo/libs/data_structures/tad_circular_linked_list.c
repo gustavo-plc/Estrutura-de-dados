@@ -154,7 +154,12 @@ void trocar(CircularLinkedList *leftList, CircularLinkedList *rightList)
 
 void inserir_vetor_na_lista(CircularLinkedList *lista, char vetor[], int n) 
 {
-
-
+    if(!lista)
+        return;
+    for (int i = 0; i < n; i++)
+    {
+    lista->inicio->dado = dado[i];
+    rotacionarLista(lista);
+    lista->length++;
+    }
 }
-
