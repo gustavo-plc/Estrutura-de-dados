@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <conio.h>
 
 #include "./includes/data_structures/tad_circular_linked_list.h"
 #include "./includes/terminal.h"
@@ -74,7 +75,7 @@ void comecar_jogo() {
     printf("\033[5;8H D  - Rotacionar lista da direita");
     printf("\033[6;8H Q  - Sair");
     definir_propriedade_da_fonte(FG_WHITE);
-    opcao = getchar();
+    opcao = getch();
     switch(opcao) {
       case 'A': case 'a':
         rotacionarLista(leftList);
@@ -99,7 +100,6 @@ int main() {
   configurar_jogo();
   // descomente apenas para testar se suas funções funcionam
   // listar(leftList);
-  // listar(rightList);
   comecar_jogo();
   finalizar_jogo();
 }

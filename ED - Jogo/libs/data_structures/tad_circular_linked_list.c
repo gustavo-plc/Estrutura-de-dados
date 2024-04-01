@@ -147,7 +147,7 @@ void trocar(CircularLinkedList *leftList, CircularLinkedList *rightList)
 {
     if(!leftList || !rightList)
         return;
-    No temps = leftList->inicio->dado;
+    int temps = leftList->inicio->dado;
     leftList->inicio->dado = rightList->inicio->dado;
     rightList->inicio->dado = temps;
 }
@@ -156,10 +156,14 @@ void inserir_vetor_na_lista(CircularLinkedList *lista, char vetor[], int n)
 {
     if(!lista)
         return;
-    for (int i = 0; i < n; i++)
-    {
-    lista->inicio->dado = dado[i];
-    rotacionarLista(lista);
+    lista->inicio = criar_no(vetor[0]);
+    No *aux = lista->inicio;
     lista->length++;
+    for (int i = 1; i < n; i++)
+    {
+        aux->prox = criar_no(vetor[i]);
+        aux = aux->prox;
+        lista->length++;
     }
+    aux->prox = lista->inicio;
 }
