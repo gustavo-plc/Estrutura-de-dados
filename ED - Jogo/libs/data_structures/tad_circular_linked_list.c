@@ -136,12 +136,25 @@ void listar(CircularLinkedList *lista) {
 // ------------------------------------------------------------------------------
 // implemente aqui
 // ------------------------------------------------------------------------------
-void rotacionarLista(CircularLinkedList *list) {
+void rotacionarLista(CircularLinkedList *lista) 
+{
+    if(!lista)
+        return;
+    lista->inicio = lista->inicio->prox;
 }
 
-void trocar(CircularLinkedList *leftList, CircularLinkedList *rightList) {
+void trocar(CircularLinkedList *leftList, CircularLinkedList *rightList) 
+{
+    if(!leftList || !rightList)
+        return;
+    No temps = leftList->inicio->dado;
+    leftList->inicio->dado = rightList->inicio->dado;
+    rightList->inicio->dado = temps;
 }
 
-void inserir_vetor_na_lista(CircularLinkedList *lista, char vetor[], int n) {
+void inserir_vetor_na_lista(CircularLinkedList *lista, char vetor[], int n) 
+{
+
+
 }
 
