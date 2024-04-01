@@ -1,20 +1,9 @@
 #ifndef TERMINAL_H
 #define TERMINAL_H
 
-#ifdef _WIN32
-  #include "termWin.h"
-#else
-  #include <termios.h>
-#endif
 // -----------------------------------------------------------------------------------------------------
 // Funções de terminal com termios.h
 // -----------------------------------------------------------------------------------------------------
-
-void mantem_pressionar_enter_para_leitura();
-void ignora_pressionar_enter_para_leitura();
-
-void esconde_texto_digitado_para_leitura();
-void exibe_texto_digitado_para_leitura();
 
 // -----------------------------------------------------------------------------------------------------
 // Funções de terminal com ANSI escape codes
