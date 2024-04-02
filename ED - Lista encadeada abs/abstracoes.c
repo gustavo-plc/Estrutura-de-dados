@@ -249,5 +249,90 @@ void deletarInicio(Lista *lista)
         return;
     No *aux = lista->inicio->prox;
     lista->inicio = aux;
+    lista->length--;
+}
+
+void deletarFim(Lista *lista)
+{
+    if(!lista)
+        return;
+    if(lista->length == 0)
+    {
+        printf("\nLista vazia, impossível deletar!\n");
+        return;
+    }
+    if(lista->length == 1)
+    {
+        lista->inicio = NULL;
+        lista->fim = NULL;
+        lista->length--;
+        return;
+    }
+    No *aux = lista->inicio;
+    No *anterior = NULL;
+    while(aux->prox != NULL)
+    {
+        anterior = aux;
+        aux = aux->prox; 
+    }
+    anterior->prox = NULL;
+    lista->fim = anterior;
+    lista->length--;
+}
+
+int topo(Pilha *pilha)
+{
+    if(!pilha)
+        return -1;
+    if(pilha->length == 0)
+    {
+        printf("\nPilha vazia!\n");
+        return -1;
+    }
+    return pilha->topo->dado;
+}
+
+void listarPilha(Pilha *pilha)
+{
+    if(pilha->topo == NULL)
+    {
+        printf("\nPilha vazia!\n");
+        return;
+    }
+    No *atual = pilha->topo; // o início da lista é atribuída ao nó atual criado
+    while(atual != NULL)
+    {
+        printf("(%d)->", atual->dado);
+        atual = atual->prox;
+    }
+    printf("NULL\n"); 
+}
+
+Pilha *criarPilha() 
+{
+    Pilha *pilha = malloc(sizeof(Pilha)); //ou retorna NULL ou retorna um endereço de memória
+    if(pilha) //no != NULL
+    {
+        pilha->topo = NULL;
+        pilha->length = 0;
+    }
+    return pilha;
+}
+
+void empilha(Pilha *pilha, uint dado)
+{
+    if(!pilha)
+        return;
+    No *novo = criarNo(dado);
+    if(pilha->length == 0)
+    {
+        pilha->topo = novo;
+        novo->prox = NULL;
+        pilha->length++;
+        return;
+    }
+    novo->prox = pilha->topo; // o novo nó apontará (novo->prox) para o atual topo (pilha->topo), pois será inserido em cima dele. 
+    pilha->topo = novo; // atualização do novo topo para apontar para o novo nó
+    pilha->length++;
 }
 

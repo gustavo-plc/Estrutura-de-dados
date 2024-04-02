@@ -81,6 +81,26 @@ int main()
     deletarInicio(lista);
 
     listar(lista);
+
+    deletarFim(lista);
+
+    listar(lista);
+
+    Pilha *pilha = criarPilha();
+
+    empilha(pilha, 300);
+    empilha(pilha, 400);
+    empilha(pilha, 500);
+    empilha(pilha, 600);
+    empilha(pilha, 700);
+    empilha(pilha, 800);
+
+
+    listarPilha(pilha);
+
+    topo(pilha);
+
+    listarPilha(pilha);
     
     return 0;
 
