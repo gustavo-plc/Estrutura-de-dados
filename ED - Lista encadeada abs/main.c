@@ -100,8 +100,7 @@ int main()
 
     topo(pilha);
 
-    listarPilha(pilha);
-    
+
     return 0;
 
 }

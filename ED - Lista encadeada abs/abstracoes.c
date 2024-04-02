@@ -289,6 +289,7 @@ int topo(Pilha *pilha)
         printf("\nPilha vazia!\n");
         return -1;
     }
+    printf("\nO dado do topo eh: %d\n", pilha->topo->dado);
     return pilha->topo->dado;
 }
 
