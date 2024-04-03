@@ -35,7 +35,7 @@ void enfileira(Lista *fila, int dado);
 No *desenfileira(Lista *fila);
 void push(Lista *pilha, int dado);
 
-No *pop(Lista *pilha);
+//No *pop(Lista *pilha);
 
 void inserirOrdenado(Lista *lista, int dado);
 void deletarInicio(Lista *lista);
@@ -45,5 +45,6 @@ void deletarFim(Lista *lista);
 Pilha *criarPilha();
 void empilha(Pilha *pilha, uint dado);
 int topo(Pilha *pilha);
+int pop(Pilha *pilha);
 
 #endif

@@ -62,11 +62,11 @@ int main()
 
     listar(lista);
 
-    pop(lista);
+    // pop(lista);
 
     listar(lista);
 
-    pop(lista);
+    // pop(lista);
 
     listar(lista);
 
@@ -100,6 +100,7 @@ int main()
 
     topo(pilha);
 
+    pop(pilha);
 
     return 0;
 

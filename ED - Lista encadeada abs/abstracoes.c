@@ -189,15 +189,15 @@ topo
 (p3) -> (p2) -> (p1) -> NULL
 */
 
-No *pop(Lista *pilha)
-{
-    if(!pilha)
-        return NULL;
-    No *novo = pilha->inicio;
-    pilha->inicio = novo->prox;
-    pilha->length--;
-    return novo;
-}
+// No *pop(Lista *pilha)
+// {
+//     if(!pilha)
+//         return NULL;
+//     No *novo = pilha->inicio;
+//     pilha->inicio = novo->prox;
+//     pilha->length--;
+//     return novo;
+// }
 
 /*Pop
 topo
@@ -336,4 +336,22 @@ void empilha(Pilha *pilha, uint dado)
     pilha->topo = novo; // atualização do novo topo para apontar para o novo nó
     pilha->length++;
 }
+
+int pop(Pilha *pilha) //desempilha / deleta o nó do topo da pilha e retorna o seu valor, ou -1, caso a pilha esteja vazia
+{
+    if(!pilha)
+        return -1;
+    if(pilha->length == 0)
+    {
+        printf("\nPilha vazia!\n");
+        return -1;
+    }
+    No *aux = pilha->topo;
+    pilha->topo = pilha->topo->prox;
+    pilha->length--;
+    printf("\nO dado do topo eh: %d\n", aux->dado);
+    return aux->dado;
+}
+
+
 
