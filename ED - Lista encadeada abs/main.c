@@ -42,11 +42,11 @@ int main()
 
     listar(lista);
 
-    enfileira(lista, 9); //entra no rabo da fila, ou seja, no final da lista
+    //enfileira(lista, 9); //entra no rabo da fila, ou seja, no final da lista
 
     listar(lista);
 
-    desenfileira(lista); //sai da cabeça da fila, ou seja, do ínicio da lista
+    // desenfileira(lista); //sai da cabeça da fila, ou seja, do ínicio da lista
 
     listar(lista);
 
@@ -101,6 +101,27 @@ int main()
     topo(pilha);
 
     pop(pilha);
+
+    listarPilha(pilha);
+
+    Fila *fila = criarFila();
+
+    enfileira(fila, 1000);
+
+    enfileira(fila, 2000);
+
+    enfileira(fila, 3000);
+
+    listarFila(fila);
+
+    desenfileira(fila);
+
+    listarFila(fila);
+
+    desenfileira(fila);
+
+    listarFila(fila);
+
 
     return 0;
 

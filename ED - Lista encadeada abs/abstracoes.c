@@ -90,26 +90,26 @@ ini           fim
 */
 
 
-void enfileira(Lista *fila, int dado)
-{
-    if(!fila)
-        return;
-    No *novo = criarNo(dado);
-    if(!novo)
-        return;
+// void enfileira(Lista *fila, int dado)
+// {
+//     if(!fila)
+//         return;
+//     No *novo = criarNo(dado);
+//     if(!novo)
+//         return;
 
-    if(fila->fim == NULL)  //para verificar se a lista é vazia
-    {
-        fila->fim = novo;
-        fila->inicio = novo;
-        fila->length++;
-        return;
-    }
-    No *antigo_fim = fila->fim; 
-    antigo_fim->prox = novo;
-    fila->fim = novo; 
-    fila->length++;
-}
+//     if(fila->fim == NULL)  //para verificar se a lista é vazia
+//     {
+//         fila->fim = novo;
+//         fila->inicio = novo;
+//         fila->length++;
+//         return;
+//     }
+//     No *antigo_fim = fila->fim; 
+//     antigo_fim->prox = novo;
+//     fila->fim = novo; 
+//     fila->length++;
+// }
 
 /*Enfileira
 ini                  fim
@@ -119,20 +119,20 @@ ini                  fim
 
 
 
-No *desenfileira(Lista *fila) // FIFO: ou seja, sai o primeiro da fila, pois é uma fila!
-{
-    if(!fila)
-        return NULL;
-    if(fila->fim == NULL)  //para verificar se a lista é vazia
-    {
-        printf("Não há elementos para remover!\n");
-        return NULL;
-    }
-    No *novo = fila->inicio;
-    fila->inicio = novo->prox;
-    fila->length--;
-    return fila->inicio;
-}
+// No *desenfileira(Lista *fila) // FIFO: ou seja, sai o primeiro da fila, pois é uma fila!
+// {
+//     if(!fila)
+//         return NULL;
+//     if(fila->fim == NULL)  //para verificar se a lista é vazia
+//     {
+//         printf("Não há elementos para remover!\n");
+//         return NULL;
+//     }
+//     No *novo = fila->inicio;
+//     fila->inicio = novo->prox;
+//     fila->length--;
+//     return fila->inicio;
+// }
 
 /*Desenfileira
 ini                  fim
@@ -309,6 +309,22 @@ void listarPilha(Pilha *pilha)
     printf("NULL\n"); 
 }
 
+void listarFila(Fila *fila)
+{
+    if(fila->length == 0)
+    {
+        printf("\nFila vazia!\n");
+        return;
+    }
+    No *atual = fila->inicio; // o início da lista é atribuída ao nó atual criado
+    while(atual != NULL)
+    {
+        printf("(%d)->", atual->dado);
+        atual = atual->prox;
+    }
+    printf("NULL\n"); 
+}
+
 Pilha *criarPilha() 
 {
     Pilha *pilha = malloc(sizeof(Pilha)); //ou retorna NULL ou retorna um endereço de memória
@@ -318,6 +334,18 @@ Pilha *criarPilha()
         pilha->length = 0;
     }
     return pilha;
+}
+
+Fila *criarFila() 
+{
+    Fila *fila = malloc(sizeof(Fila)); //ou retorna NULL ou retorna um endereço de memória
+    if(fila) //no != NULL
+    {
+        fila->inicio = NULL;
+        fila->fim = NULL;
+        fila->length = 0;
+    }
+    return fila;
 }
 
 void empilha(Pilha *pilha, uint dado)
@@ -353,5 +381,35 @@ int pop(Pilha *pilha) //desempilha / deleta o nó do topo da pilha e retorna o s
     return aux->dado;
 }
 
+void enfileira(Fila *fila, uint dado) // insere novo nó no fim da fila
+{
+    if(!fila)
+        return;
+    if(fila->length == 0)
+    {
+        fila->inicio = criarNo(dado);
+        fila->fim = fila->inicio;
+        fila->length++;
+        return;
+    }
+    fila->fim->prox = criarNo(dado);
+    fila->fim = fila->fim->prox;
+    fila->length++;
+}
 
+int desenfileira(Fila *fila) // deleta o nó do início da fila e retorna o seu valor, ou -1, caso a fila esteja vazia.
+{
+    if(!fila)
+        return -1;
+    if(fila->length == 0)
+    {
+        printf("\nFila vazia!\n");
+        return -1;
+    }
+    No *aux = fila->inicio;
+    fila->inicio = fila->inicio->prox;
+    fila->length--;
+    printf("\nO valor do inicio da fila era: %d\n", aux->dado);
+    return aux->dado;
+}
 

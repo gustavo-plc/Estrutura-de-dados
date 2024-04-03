@@ -5,6 +5,7 @@ typedef struct lista Lista;
 typedef struct no No;
 typedef unsigned int uint;
 typedef struct pilha Pilha;
+typedef struct fila Fila;
 
 struct no
 {
@@ -24,6 +25,12 @@ No *topo;
 uint length;
 };
 
+struct fila {
+No *inicio;
+No *fim;
+uint length;
+};
+
 No *criarNo(int dado);
 Lista *criarLista(); // cria uma lista vazia
 void listar(Lista *lista);
@@ -31,8 +38,8 @@ void listarPilha(Pilha *pilha);
 void inserirInicio(Lista *lista, int dado); // inserir o primeiro elemento da lista
 void inserirFim(Lista *lista, int dado);
 
-void enfileira(Lista *fila, int dado);
-No *desenfileira(Lista *fila);
+//void enfileira(Lista *fila, int dado);
+// No *desenfileira(Lista *fila);
 void push(Lista *pilha, int dado);
 
 //No *pop(Lista *pilha);
@@ -46,5 +53,7 @@ Pilha *criarPilha();
 void empilha(Pilha *pilha, uint dado);
 int topo(Pilha *pilha);
 int pop(Pilha *pilha);
+void enfileira(Fila *fila, uint dado);
+
 
 #endif
