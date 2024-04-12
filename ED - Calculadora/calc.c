@@ -65,7 +65,7 @@ void destroiCalc(Calc *c)
         return;
     }
     free(c);
-    printf("A Calculadora foi destruída!\n");
+    printf("A Calculadora foi destruida!\n");
 }
 
 void zeraCalc(Calc *c)

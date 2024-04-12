@@ -18,5 +18,7 @@ zeraCalc(c1);
 
 destroiCalc(c1);
 
+somaCalc(c1, 3);
+
 }
 
