@@ -1,9 +1,8 @@
 #include <stdlib.h>
 #include <math.h>
+#include "ponto.h" // inclui os protótipos
 
-#include "Ponto.h" // inclui os protótipos
-
-struct ponto {
+struct ponto { //implementação da estrutura
     float x;
     float y;
 };

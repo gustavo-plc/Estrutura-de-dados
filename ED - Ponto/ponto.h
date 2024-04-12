@@ -1,7 +1,7 @@
 #ifndef PONTO_H
 #define PONTO_H
 
-typedef struct ponto Ponto;
+typedef struct ponto Ponto; //vou chamar a struct ponto somente de Ponto ao longo do programa. forma de renomear.
 
 Ponto* ponto_cria(float x, float y);
 void ponto_libera(Ponto *p);
