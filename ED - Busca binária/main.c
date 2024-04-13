@@ -3,8 +3,8 @@
 
 int main()
 {
-    int tamanho = 5;
-    int valor = 5;
+    int tamanho = 20;
+    int valor = 10;
     Vetor *v = cria_vetor(tamanho);
     
 
