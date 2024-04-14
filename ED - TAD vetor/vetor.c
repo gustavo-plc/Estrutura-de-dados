@@ -26,7 +26,7 @@ void liberarVetor(Vetor *v) {
 
 void listar(Vetor *v) {
   for(int i = 0; i < v->length; i++) {
-    printf("%d ", v->dados[i]);
+    printf("v[%d] = %d \n", i, v->dados[i]);
   }
   printf("\n");
 }
@@ -93,7 +93,7 @@ int obterElemento(Vetor *v, int indice)
   {
     for (int i = 0; i < v->length; i++)
       {
-        if (v->dados[i] == elemento)
+        if (i == indice)
         return v->dados[i];   
       }
   }  
@@ -114,7 +114,7 @@ void deletarElemento(Vetor *v, int elemento) // deletar elemento buscado
   {
       v->dados[aux] = v->dados[aux+1];  
   }
-  lenght--;
+  v->length--;
 }
 
 
@@ -127,7 +127,7 @@ int deletarIndice(Vetor *v, int indice) // deletar elemento pelo índice
       {
          v->dados[indice] = v->dados[indice+1];  
       }
-      lenght--;
+      v->length--;
   }
   else
     printf("Valor inválido de índice.\n");

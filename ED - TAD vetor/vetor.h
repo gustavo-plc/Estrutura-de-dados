@@ -13,7 +13,7 @@ void atualizarTodos(Vetor *v, int dadoAntigo, int dadoNovo);
 void atualizarIndice(Vetor *v, int indice, int dadoNovo);
 int buscarElemento(Vetor *v, int elemento);
 int obterElemento(Vetor *v, int indice);
-int deletarElemento(Vetor *v, int indice);
+void deletarElemento(Vetor *v, int elemento);
 int deletarIndice(Vetor *v, int indice);
 
 #endif // VETOR_H
