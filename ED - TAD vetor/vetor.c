@@ -117,6 +117,19 @@ void deletarElemento(Vetor *v, int elemento) // deletar elemento buscado
   v->length--;
 }
 
+void deletarElementoV2(Vetor *v, int elemento) // deletar elemento buscado
+{
+  for (int i = 0; i < v->length; i++)
+  {
+    if (v->dados[i] == elemento)
+    {
+      for (int j = i; j < v->length; j++)
+        v->dados[j] = v->dados[j+1];     
+    v->length--;
+    }
+  }
+}
+
 
 
 int deletarIndice(Vetor *v, int indice) // deletar elemento pelo índice
