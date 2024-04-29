@@ -26,11 +26,24 @@ void exibir_pre_ordem(No *arvore) {
 }
 
 void exibir_nos_folha(No *arvore) {
-  
-}
+  if(arvore) { // no != NULL
+        if(arvore->esq == NULL && arvore->dir == NULL)
+        {
+            printf("(%d)", arvore->dado);
+            return;
+        }
+    exibir_nos_folha(arvore->esq);
+    exibir_nos_folha(arvore->dir);
+    }
+  }
 
 void exibir_nos_internos(No *arvore) {
-  
+    if(arvore) { // no != NULL
+        if(!(arvore->esq == NULL && arvore->dir == NULL))
+            printf("(%d)", arvore->dado);
+    exibir_nos_internos(arvore->esq);
+    exibir_nos_internos(arvore->dir);
+    }
 }
 
 int main(void) {
@@ -45,5 +58,11 @@ int main(void) {
           raiz->dir->esq = criar_no(6);
           raiz->dir->dir = criar_no(7);
   exibir_pre_ordem(raiz);
+  printf("\n");
+  exibir_nos_folha(raiz);
+  printf("\n");
+  exibir_nos_internos(raiz);
+  printf("\n");
+
   return 0;
 }
