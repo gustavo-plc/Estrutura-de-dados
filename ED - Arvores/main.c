@@ -63,7 +63,7 @@ void inserir_ordenado(No *arvore, int dado)
       inserir_ordenado(arvore->esq, dado);
       
   } 
-  else if (dado > arvore->dado) // Se o dado é maior que o dado atual, inserimos à direita
+  else if (dado > arvore->dado) // Se o dado é maior que o dado atual, insere à direita
   {
     if (arvore->dir == NULL)    
       arvore->dir = criar_no(dado);
@@ -71,6 +71,25 @@ void inserir_ordenado(No *arvore, int dado)
       inserir_ordenado(arvore->dir, dado);
   }
 }
+
+int altura(No *arvore) {
+    if (arvore == NULL) 
+    {
+      return -1; // árvore vazia
+    } 
+    else 
+    {
+      int altura_esq = altura(arvore->esq);
+      int altura_dir = altura(arvore->dir);
+      int max;
+      if (altura_esq > altura_dir) 
+        max = altura_esq;
+      else
+        max = altura_dir;
+      return max + 1;
+    }
+}
+
 
 int main(void) {
   //       (1)
@@ -98,6 +117,8 @@ int main(void) {
   printf("\n");
   exibir_nos_internos(raiz);
   printf("\n");
-  
+
+  printf("a altura eh: %d",altura(raiz));
+
   return 0;
 }
