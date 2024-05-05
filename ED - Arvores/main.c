@@ -46,6 +46,15 @@ void exibir_nos_internos(No *arvore) {
     }
 }
 
+void inserir_ordenado(No *arvore, int dado)
+{
+  if(!arvore) return; // no != NULL
+  if(dado > arvore->dado)
+  {
+    if()
+  }
+}
+
 int main(void) {
   //       (1)
   //   (2)     (3)
