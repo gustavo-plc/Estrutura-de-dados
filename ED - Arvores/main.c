@@ -49,9 +49,26 @@ void exibir_nos_internos(No *arvore) {
 void inserir_ordenado(No *arvore, int dado)
 {
   if(!arvore) return; // no != NULL
-  if(dado > arvore->dado)
+  if (arvore == NULL) 
+    {               
+      criar_no(dado); //  árvore vazia, o dado é inserido como um novo nó
+      return;
+    }
+
+  if (dado < arvore->dado) // Se o dado é menor que o dado atual, insere à esquerda
+  { 
+    if (arvore->esq == NULL) // Se a esquerda é nula, cria um novo nó para inserir o dado
+      arvore->esq = criar_no(dado); 
+    else   
+      inserir_ordenado(arvore->esq, dado);
+      
+  } 
+  else if (dado > arvore->dado) // Se o dado é maior que o dado atual, inserimos à direita
   {
-    if()
+    if (arvore->dir == NULL)    
+      arvore->dir = criar_no(dado);
+    else 
+      inserir_ordenado(arvore->dir, dado);
   }
 }
 
@@ -60,12 +77,12 @@ int main(void) {
   //   (2)     (3)
   // (4) (5) (6) (7)
   No *raiz = criar_no(1);
-        raiz->esq = criar_no(2);
-          raiz->esq->esq = criar_no(4);
-          raiz->esq->dir = criar_no(5);
-        raiz->dir = criar_no(3);
-          raiz->dir->esq = criar_no(6);
-          raiz->dir->dir = criar_no(7);
+        raiz->esq = criar_no(3);
+          raiz->esq->esq = criar_no(7);
+          raiz->esq->dir = criar_no(9);
+        raiz->dir = criar_no(5);
+          raiz->dir->esq = criar_no(11);
+          raiz->dir->dir = criar_no(13);
   exibir_pre_ordem(raiz);
   printf("\n");
   exibir_nos_folha(raiz);
@@ -73,5 +90,14 @@ int main(void) {
   exibir_nos_internos(raiz);
   printf("\n");
 
+  inserir_ordenado(raiz, 8);
+
+  exibir_pre_ordem(raiz);
+  printf("\n");
+  exibir_nos_folha(raiz);
+  printf("\n");
+  exibir_nos_internos(raiz);
+  printf("\n");
+  
   return 0;
 }
