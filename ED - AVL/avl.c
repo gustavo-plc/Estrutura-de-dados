@@ -81,6 +81,33 @@ int altura(NoAVL *arvore) {
     return (arvore->esq + 1 - arvore->esq + 1);
 }
 
+int fb(NoAVL *arvore)
+
+{
+  return altura(arvore->esq) + 1 - (altura(arvore->dir) + 1);
+}
+
+// rota_esquerda(no_avl)
+// {
+//   if(!no_avl)
+//     return;
+//   no_avl->esq->dir = no_avl;
+//   no_avl = no_avl->dir;
+// }
+
+
+NoAVL *rotacionar_dir(NoAVL *arvore)
+{
+  if(!arvore)
+    return NULL;
+  if(!arvore->esq)
+    return arvore;
+  NoAVL *esq = arvore->esq;
+  NoAVL *aux = esq->dir;
+  esq->dir = arvore;
+  arvore->esq = aux;
+  return esq;
+}
 
 int main(void) {
   //       (1)
