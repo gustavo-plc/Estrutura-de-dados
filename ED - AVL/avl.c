@@ -18,7 +18,7 @@ NoAVL *criar_no(int dado) {
   return no_avl;
 }
 
-void exibir_pre_ordem(No *arvore) {
+void exibir_pre_ordem(NoAVL *arvore) {
   if(arvore) { // no != NULL
     printf("(%d)", arvore->dado);
     exibir_pre_ordem(arvore->esq);
@@ -26,7 +26,7 @@ void exibir_pre_ordem(No *arvore) {
   }
 }
 
-void exibir_nos_folha(No *arvore) {
+void exibir_nos_folha(NoAVL *arvore) {
   if(arvore) { // no != NULL
         if(arvore->esq == NULL && arvore->dir == NULL)
         {
@@ -38,7 +38,7 @@ void exibir_nos_folha(No *arvore) {
     }
   }
 
-void exibir_nos_internos(No *arvore) {
+void exibir_nos_internos(NoAVL *arvore) {
     if(arvore) { // no != NULL
         if(!(arvore->esq == NULL && arvore->dir == NULL))
             printf("(%d)", arvore->dado);
@@ -47,7 +47,7 @@ void exibir_nos_internos(No *arvore) {
     }
 }
 
-void inserir_ordenado(No *arvore, int dado)
+void inserir_ordenado(NoAVL *arvore, int dado)
 {
   if(!arvore) return; // no != NULL
   if (arvore == NULL) 
@@ -73,13 +73,19 @@ void inserir_ordenado(No *arvore, int dado)
   }
 }
 
-#define MAIOR(a, b) a > b ? a : b; //se a for maior que b, retorna a, caso contrário, retorna b.
+int maior(int a, int b) {
+    return (a > b) ? a : b;
+}
 
 int altura(NoAVL *arvore) {
-    if (!arvore) return 0; // nó inválido, retorna zero.
-    if (arvore->esq == NULL && arvore->dir == NULL) return 0;
-    return (arvore->esq + 1 - arvore->esq + 1);
+    if (!arvore) return -1; // nó inválido, retorna -1.
+    int alturaEsq = altura(arvore->esq);
+    int alturaDir = altura(arvore->dir);
+    return maior(alturaEsq, alturaDir) + 1;
 }
+  //       (1)
+  //   (3)     (5)
+  // (7) (9) (11) (13)
 
 int fb(NoAVL *arvore)
 
@@ -111,30 +117,30 @@ NoAVL *rotacionar_dir(NoAVL *arvore)
 
 int main(void) {
   //       (1)
-  //   (2)     (3)
-  // (4) (5) (6) (7)
-  No *raiz = criar_no(1);
+  //   (3)     (5)
+  // (7) (9) (11) (13)
+  NoAVL *raiz = criar_no(1);
         raiz->esq = criar_no(3);
           raiz->esq->esq = criar_no(7);
           raiz->esq->dir = criar_no(9);
         raiz->dir = criar_no(5);
           raiz->dir->esq = criar_no(11);
           raiz->dir->dir = criar_no(13);
-  exibir_pre_ordem(raiz);
-  printf("\n");
-  exibir_nos_folha(raiz);
-  printf("\n");
-  exibir_nos_internos(raiz);
-  printf("\n");
+  // exibir_pre_ordem(raiz);
+  // printf("\n");
+  // exibir_nos_folha(raiz);
+  // printf("\n");
+  // exibir_nos_internos(raiz);
+  // printf("\n");
 
-  inserir_ordenado(raiz, 8);
+  // inserir_ordenado(raiz, 8);
 
-  exibir_pre_ordem(raiz);
-  printf("\n");
-  exibir_nos_folha(raiz);
-  printf("\n");
-  exibir_nos_internos(raiz);
-  printf("\n");
+  // exibir_pre_ordem(raiz);
+  // printf("\n");
+  // exibir_nos_folha(raiz);
+  // printf("\n");
+  // exibir_nos_internos(raiz);
+  // printf("\n");
 
   printf("a altura eh: %d",altura(raiz));
 
