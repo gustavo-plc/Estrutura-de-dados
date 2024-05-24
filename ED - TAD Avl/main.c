@@ -52,7 +52,6 @@ unsigned int height(AVLTree *avltree)
 }
 
 
-
 AVLTree *rotateLeft(AVLTree *avltree);
 AVLTree *rotateRight(AVLTree *avltree);
 AVLTree *insertNode(AVLTree *avltree, int dado);
