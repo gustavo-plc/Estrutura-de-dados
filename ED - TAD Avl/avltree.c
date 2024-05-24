@@ -1,5 +1,0 @@
-int balancingFactor(AVLTree *avltree)
-{
-
-    
-}
