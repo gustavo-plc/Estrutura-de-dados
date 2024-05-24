@@ -10,6 +10,8 @@ struct avltree {
   void (*show)(AVLTree *avltree);
 };
 
+typedef AVLTree avltree;
+
 void exibir(AVLTree *avltree) {
   if(avltree) printf("(%d)", avltree->dado);
 }
@@ -26,8 +28,31 @@ AVLTree *novaArvore(int dado) {
 }
 
 // a serem implementados
-int balancingFactor(AVLTree *avltree);
-unsigned int height(AVLTree *avltree);
+int balancingFactor(AVLTree *avltree)
+{
+    if(!avltree)
+        return 0;
+    return height(avltree->esq) - height(avltree->dir);
+}
+
+//          (1)
+//     (3)       (5)
+//  (7)   (9) (11)  (13)
+
+unsigned int height(AVLTree *avltree)
+{
+    if(!avltree)
+        return 0;
+    int alt_esq = height(avltree->esq);
+    int alt_dir = height(avltree->dir);
+    if (alt_esq > alt_dir)
+        return alt_esq+1;
+    else
+        return alt_dir+1;
+}
+
+
+
 AVLTree *rotateLeft(AVLTree *avltree);
 AVLTree *rotateRight(AVLTree *avltree);
 AVLTree *insertNode(AVLTree *avltree, int dado);
