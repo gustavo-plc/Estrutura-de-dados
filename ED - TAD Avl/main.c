@@ -67,10 +67,116 @@ avltree *rotateLeft(avltree *avltree)
 }
 
 
+avltree *rotateRight(avltree *avltree) 
+{
+  avltree *x = avltree->esq;
+  avltree *T2 = x->dir;
 
-avltree *rotateRight(avltree *avltree);
-avltree *insertNode(avltree *avltree, int dado);
-avltree *deleteNode(avltree *avltree, int dado);
+  x->dir = avltree;
+  avltree->esq = T2;
+
+  return x;
+}
+
+avltree *insertNode(avltree *avltree, int dado) 
+{
+  if (avltree == NULL) 
+    {
+      avltree *node = (avltree *)malloc(sizeof(avltree));
+      node->dado = dado;
+      node->esq = NULL;
+      node->dir = NULL;
+      return node;
+    }
+
+  if (dado < avltree->dado)
+      avltree->esq = insertNode(avltree->esq, dado);
+  else if (dado > avltree->dado)
+      avltree->dir = insertNode(avltree->dir, dado);
+  else
+      return avltree;
+
+  int balance = balancingFactor(avltree);
+
+  if (balance > 1 && dado < avltree->esq->dado)
+      return rotateRight(avltree);
+
+  if (balance < -1 && dado > avltree->dir->dado)
+      return rotateLeft(avltree);
+
+  if (balance > 1 && dado > avltree->esq->dado) 
+    {
+      avltree->esq = rotateLeft(avltree->esq);
+      return rotateRight(avltree);
+    }
+
+  if (balance < -1 && dado < avltree->dir->dado) 
+    {
+      avltree->dir = rotateRight(avltree->dir);
+      return rotateLeft(avltree);
+    }
+
+  return avltree;
+}
+
+
+
+
+avltree *deleteNode(avltree *avltree, int key) 
+{
+  if (avltree == NULL)
+    return avltree;
+
+  if (key < avltree->dado)
+    avltree->esq = deleteNode(avltree->esq, key);
+  else if (key > avltree->dado)
+    avltree->dir = deleteNode(avltree->dir, key);
+  else 
+    {
+      if ((avltree->esq == NULL) || (avltree->dir == NULL)) 
+        {
+          AVLTree *temp = avltree->esq ? avltree->esq : avltree->dir;
+          if (temp == NULL) 
+            {
+              temp = avltree;
+              avltree = NULL;
+            } 
+          else
+            *avltree = *temp;
+          free(temp);
+        } 
+      else 
+        {
+          avltree *temp = minValueNode(avltree->dir);
+          avltree->dado = temp->dado;
+          avltree->dir = deleteNode(avltree->dir, temp->dado);
+        }
+    }
+
+  if (avltree == NULL)
+      return avltree;
+
+  int balance = balancingFactor(avltree);
+
+  if (balance > 1 && balancingFactor(avltree->esq) >= 0)
+      return rotateRight(avltree);
+
+  if (balance > 1 && balancingFactor(avltree->esq) < 0) 
+    {
+      avltree->esq = rotateLeft(avltree->esq);
+      return rotateRight(avltree);
+    }
+
+  if (balance < -1 && balancingFactor(avltree->dir) <= 0)
+      return rotateLeft(avltree);
+
+  if (balance < -1 && balancingFactor(avltree->dir) > 0) 
+    {
+      avltree->dir = rotateRight(avltree->dir);
+      return rotateLeft(avltree);
+    }
+  return avltree;
+}
 
 // exibir
 void preOrder(avltree *avltree);
