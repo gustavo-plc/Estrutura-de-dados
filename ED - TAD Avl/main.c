@@ -69,13 +69,16 @@ avltree *rotateLeft(avltree *avltree)
 
 avltree *rotateRight(avltree *avltree) 
 {
-  avltree *x = avltree->esq;
-  avltree *T2 = x->dir;
-
-  x->dir = avltree;
-  avltree->esq = T2;
-
-  return x;
+  if(!avltree)
+    return NULL;
+  if((balancingFactor(avltree) == 2) && (avltree->esq->esq != NULL))
+  {
+    avltree *x = avltree->esq;
+    avltree *T2 = x->dir;
+    x->dir = avltree;
+    avltree->esq = T2;
+    return x;
+  }
 }
 
 avltree *insertNode(avltree *avltree, int dado) 
