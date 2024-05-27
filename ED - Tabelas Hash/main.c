@@ -8,7 +8,7 @@ typedef struct hash_map HashMap;
 struct entry {
   int key;
   int value;
-  Entry *prox;
+  Entry *next;
 };
 
 struct list {
@@ -19,6 +19,7 @@ struct list {
 struct hash_map {
   List *lists;
   int length;
+  int tableSize;
   // void (*hashFunction)(int key); // ponteiro para função
 };
 
@@ -43,6 +44,7 @@ HashMap *newHashMap(int tableSize) {
   HashMap *map = malloc(sizeof(HashMap));
   if(map) { // inicializar o map
     map->length = 0;
+    map->tableSize = tableSize;
     map->lists = calloc(sizeof(List), tableSize);
     if(!map->lists) {
       free(map);
@@ -52,12 +54,28 @@ HashMap *newHashMap(int tableSize) {
   return map;
 }
 // 
-void insertLinkedMap1x1(HashMap *map, Entry *e) {
+void insertLinkedMap1x1(HashMap *map, Entry *e) { //resolução de conflitos por encadeamento, usando 1:1
+  // validação da entrada
   if(!map || !e) return;
-  if(map->lists[hash1x1(e->value)].length == 0) {
-    map->lists[hash1x1(e->value)].start = e;
-    map->lists[hash1x1(e->value)].length++;
-  } else { // inserção ordenada
+  // validação do índice na tabela
+  int hash = hash1x1(e->key);
+  if(hash < 0 && hash >= map->tableSize) return; // caso de índice inválido
+  
+  if(map->lists[hash].length == 0) {
+    map->lists[hash].start = e;
+    map->lists[hash].length++;
+  } else { 
+    if(e->key < map->lists[hash].start->key) { // inserção ordenada no início
+        e->next = map->lists[hash].start;
+        map->lists[hash].start = e;
+    } else {
+        Entry *aux = map->lists[hash].start;
+        while(aux->next != NULL && e->key >= aux->next->key) { //inserção no meio ou ao final
+            aux = aux->next;
+        }
+        e->next = aux->next;
+        aux->next = e;
+    }
     
   }
 }
