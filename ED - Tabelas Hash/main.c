@@ -79,3 +79,18 @@ void insertLinkedMap1x1(HashMap *map, Entry *e) { //resolução de conflitos por
     
   }
 }
+
+Entry *getValue1x1(HashMap *map, int key) {
+    if(!map)
+        return NULL;
+    int hash = hash1x1(key);
+    if (hash < 0 && hash >= map->tableSize)
+        return NULL;
+    List list = map->lists[hash]; // busca sequencial
+    while (map->lists->start->next != NULL) {
+        if (map->lists->start->value == key)
+            return map->lists->start->value;
+        map->lists->start = map->lists->start->next;
+    }
+    return map->lists->start->value;
+}
