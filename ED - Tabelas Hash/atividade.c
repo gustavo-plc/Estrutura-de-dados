@@ -84,10 +84,7 @@ void insertLinkedMap(HashMap *map, Entry *e) { //resolução de conflitos por en
     }
 }
 
-// Função de teste
 int main() {
-    
-    // Criação da entrada para o caractere
     
     // Criação da entrada para o caractere
     char key;
@@ -96,13 +93,11 @@ int main() {
 
     int hashValue = hash(key);
     Entry *e = newEntry(key, hashValue);
-
     
     // Inicialização da tabela hash
     int tableSize = 128;
     HashMap *myMap = newHashMap(tableSize, hash); //passando uma função como argumento
 
-    
     // Inserção da entrada na tabela hash
     insertLinkedMap(myMap, e);
 
